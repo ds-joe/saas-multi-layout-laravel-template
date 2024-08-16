@@ -1,4 +1,4 @@
-# SaaS Dashboard Template with Laravel, React, Vite, TypeScript, Tailwind, and Stripe
+# SaaS Dashboard Template with Laravel, React, Vite, Inertia, TypeScript, Tailwind, and Stripe
 
 This template provides a solid foundation for building a SaaS dashboard application, combining powerful and modern technologies like Laravel, React, TypeScript, Inertia, Vite, Tailwind CSS, and Stripe. Whether you're starting a new project or enhancing an existing one, this template is designed to streamline your development process and help you create a robust, scalable, and user-friendly SaaS platform.
 
