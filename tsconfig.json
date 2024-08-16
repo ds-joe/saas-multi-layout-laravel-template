@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "skipLibCheck": true,
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "jsx": "react-jsx",
+        "strict": true,
+        "isolatedModules": true,
+        "target": "ESNext",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitAny": true,
+        "paths": {
+            "@/*": [
+                "./resources/react/*"
+            ],
+            "~/*": [
+                "./public/*"
+            ],
+            "~tailwind/*": [
+                "./config/tailwind/*"
+            ]
+        }
+    },
+    "include": [
+        "resources/react/**/*.ts",
+        "resources/react/**/*.tsx",
+        "resources/react/**/*.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
