@@ -1,0 +1,34 @@
+<?php
+
+namespace $MODULE_NAMESPACE$\$STUDLY_NAME$\Http\Controllers\Website;
+
+use $MODULE_NAMESPACE$\$STUDLY_NAME$\Http\Controllers\BaseController;
+use App\Facade\Inertia;
+use App\Services\Inertia\Enums\RenderLayout;
+use Inertia\Response;
+
+class WebsiteController extends BaseController
+{
+
+    # Include parent controller __construct. 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Display react page.
+     *
+     * @return Response
+    */
+    public function index(): Response
+    {
+        return Inertia::render(
+            RenderLayout::dashboard,
+            'home', # Target page
+            [], # Page translated words
+            [], # Page props
+            module: "$LOWER_NAME$" # if you your page outside modules directory you can remove it.
+        );
+    }
+}

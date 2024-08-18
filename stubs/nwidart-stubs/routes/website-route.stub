@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use $MODULE_NAMESPACE$\$STUDLY_NAME$\$CONTROLLER_NAMESPACE$\$STUDLY_NAME$Controller;
+use $MODULE_NAMESPACE$\$STUDLY_NAME$\$CONTROLLER_NAMESPACE$\Website\WebsiteController;
+
+/* ************************************************************************************
+    | Example routes
+    |
+    |
+    | This is just example routes for each layout you can change it depending on your logic.
+    |
+************************************************************************************* */
+
+# None layout controller.
+Route::controller($STUDLY_NAME$Controller::class)->group(function () {
+    Route::get('$LOWER_NAME$/home', 'index')->name('$LOWER_NAME$.home');
+});
+
+# Website layout controller.
+Route::controller(WebsiteController::class)->group(function () {
+    Route::get('$LOWER_NAME$/website/home', 'index')->name('$LOWER_NAME$.website.home');
+});

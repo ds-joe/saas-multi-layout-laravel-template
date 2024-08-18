@@ -22,12 +22,8 @@ declare global {
       page: SetupOptions<unknown, ServerPageProps>["props"]["initialPage"]
     ) => JSX.Element;
   } // react page
-  interface RPO<P = {}>
-    extends React.FC<
-      P & {
-        children?: ReactNode;
-      }
-    > { } // react provider
+  interface RPO<P = {}> extends React.FC<P & { children?: ReactNode }> { } // react provider
+  interface RPL<P = {}> extends React.FC<P & { children?: ReactNode, title?: string }> { } // React layout
 
   /** ***********************************************************************
    *  In coming data from sever

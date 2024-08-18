@@ -1,0 +1,23 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use Illuminate\Http\Request;
+
+class $CLASS$ extends BaseController
+{
+
+    # Include parent controller __construct. 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Handle the incoming request.
+     */
+    public function __invoke(Request $request)
+    {
+        return response()->json([]);
+    }
+}
