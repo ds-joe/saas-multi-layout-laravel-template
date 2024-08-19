@@ -1,10 +1,19 @@
 // Dependencies
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 
-// NOTE: keep assets before prime provider to avoid any errors
+// Assets
 import "@/styles/scss/dashboard/main.scss";
 
 const ThemeProvider: RPO = ({ children }) => {
+
+  // Set layout main class
+  useEffect(() => {
+    document.documentElement.classList.add('dashboard-layout');
+    // Cleanup
+    return () => {
+      document.documentElement.classList.remove('dashboard-layout');
+    }
+  }, []);
 
   return (
     <Fragment>

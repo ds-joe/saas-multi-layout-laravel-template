@@ -10,6 +10,7 @@ import Sidebar from "@/Components/Dashboard/Layout/Sidebar";
 import Navbar from "@/Components/Dashboard/Layout/Navbar";
 
 const Layout: RPL = ({ children, title }) => {
+
   return (
     <Fragment>
       <Head title={title} />

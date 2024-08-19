@@ -5,6 +5,9 @@ import shadcnBorderRadius from "./config/tailwind/shadcn/borderRadius"
 import shadcnColors from "./config/tailwind/shadcn/colors"
 import shadcnKeyframes from "./config/tailwind/shadcn/keyframes"
 
+// Custom configs
+import customFonts from "./config/tailwind/custom/fonts";
+
 // Types
 import type { Config } from "tailwindcss"
 
@@ -27,6 +30,9 @@ const config = {
     extend: {
       colors: {
         ...shadcnColors
+      },
+      fontFamily: {
+        ...customFonts
       },
       borderRadius: {
         ...shadcnBorderRadius
