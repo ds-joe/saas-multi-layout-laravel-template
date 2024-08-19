@@ -14,6 +14,7 @@
         "@headlessui/react": "^2.0.0",
         "@inertiajs/react": "^1.0.0",
         "@tailwindcss/forms": "^0.5.3",
+        "@types/node": "^22.4.1",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
         "@types/uuid": "^10.0.0",
@@ -29,14 +30,17 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "@radix-ui/react-slot": "^1.1.0",
         "@reduxjs/toolkit": "^2.2.7",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.1",
+        "lucide-react": "^0.428.0",
         "path": "^0.12.7",
-        "primeflex": "^3.3.1",
-        "primeicons": "^7.0.0",
-        "primereact": "^10.8.2",
         "react-redux": "^9.1.2",
         "react-transition-group": "^4.4.5",
         "sass": "^1.77.8",
+        "tailwind-merge": "^2.5.2",
+        "tailwindcss-animate": "^1.0.7",
         "typescript": "^5.5.4"
     }
 }

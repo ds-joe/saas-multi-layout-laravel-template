@@ -8,15 +8,14 @@ This template provides a solid foundation for building a SaaS dashboard applicat
 
 ## Features
 
-- **Laravel**: Robust backend framework with powerful tools and MVC architecture.
-- **React & TypeScript**: Modern frontend library with static type checking.
-- **Inertia**: using classic server-side routing. Works with any backend.
-- **Vite**: Fast build tool for modern web projects.
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
-- **Stripe Integration**: Easily accept payments and manage subscriptions.
-- **Sass**: the most mature, stable, and powerful professional grade CSS extension language in the world. 
-- **PrimeReact**: Utilize a rich collection of Tailwind-styled UI components for rapid front-end development.
-- **Laravel Modules**: is a Laravel package which was created to manage your large Laravel app using modules. 
+- **[Laravel](https://laravel.com/docs/11.x)**: Robust backend framework with powerful tools and MVC architecture.
+- **[React](https://react.dev/) & [TypeScript](https://www.typescriptlang.org/)**: Modern frontend library with static type checking.
+- **[Inertia](https://inertiajs.com/)**: using classic server-side routing. Works with any backend.
+- **[Vite](https://vitejs.dev/guide/)**: Fast build tool for modern web projects.
+- **[Tailwind CSS](https://tailwindcss.com/docs)**: Utility-first CSS framework for rapid UI development.
+- **[Sass](https://sass-lang.com/)**: the most mature, stable, and powerful professional grade CSS extension language in the world. 
+- **[Shadcn](https://ui.shadcn.com/docs)**: A Lightweight CSS-in-JS Library.
+- **[Laravel Modules](https://laravelmodules.com)**: is a Laravel package which was created to manage your large Laravel app using modules. 
 
 ## Getting Started
 
