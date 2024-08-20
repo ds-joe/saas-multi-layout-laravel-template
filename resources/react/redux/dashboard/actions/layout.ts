@@ -1,22 +1,31 @@
-// Enums
-import { DashboardLayoutTheme } from "../initialStates/layout";
-
 // Types
-import type { PayloadAction } from "@reduxjs/toolkit";
+// import type { PayloadAction } from "@reduxjs/toolkit";
 import type { LayoutState } from "../types/Layout";
 
 
 export default {
 
   /**
-   * Change theme
+   * Toggle dark theme
    * 
    * @param { LayoutState } state
-   * @param { PayloadAction<DashboardLayoutTheme> } theme
    * @return { void }
    */
-  changeLayoutTheme: (state: LayoutState, theme: PayloadAction<DashboardLayoutTheme>): void => {
-    state.currentTheme = theme.payload;
-  }
+  toggleDarkTheme: (state: LayoutState): void => {
+    const darkMode = !state.darkMode;
+    localStorage.setItem('dark-theme', darkMode as any);
+    document.documentElement.classList.toggle('dark', darkMode);
+    state.darkMode = darkMode;
+  },
+
+  /**
+   * Toggle sidebar open.
+   * 
+   * @param { LayoutState } state
+   * @return { void }
+   */
+  toggleSidebarOpen: (state: LayoutState): void => {
+    state.sidebarOpen = !state.sidebarOpen;
+  },
 
 }

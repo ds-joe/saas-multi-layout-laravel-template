@@ -28,8 +28,13 @@ export default {
     DEFAULT: "hsl(var(--popover))",
     foreground: "hsl(var(--popover-foreground))",
   },
+  water: {
+    DEFAULT: "hsl(var(--water))",
+    foreground: "hsl(var(--water-foreground))",
+  },
   card: {
     DEFAULT: "hsl(var(--card))",
     foreground: "hsl(var(--card-foreground))",
   },
+
 }

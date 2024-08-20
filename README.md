@@ -16,16 +16,17 @@ This template provides a solid foundation for building a SaaS dashboard applicat
 - **[Sass](https://sass-lang.com/)**: the most mature, stable, and powerful professional grade CSS extension language in the world. 
 - **[Shadcn](https://ui.shadcn.com/docs)**: A Lightweight CSS-in-JS Library.
 - **[Laravel Modules](https://laravelmodules.com)**: is a Laravel package which was created to manage your large Laravel app using modules. 
+-- **[react-icons](https://react-icons.github.io/react-icons/)**:  which utilizes ES6 imports that allows you to include only the icons that your project is using
 
 ## Getting Started
 
 ### Prerequisites
 
-- PHP 8.2 or higher
-- Node.js 20.16.0 or higher
-- Composer
-- MySQL (10.11.8-MariaDB)
-- Stripe Account
+- [PHP](https://www.php.net/) 8.2 or higher
+- [Node.js](https://nodejs.org/en) 20.16.0 or higher
+- [Composer](https://getcomposer.org/)
+- [MySQL](https://www.mysql.com/) (10.11.8-MariaDB)
+- [Stripe](https://docs.stripe.com/) Account
 
 ### Installation
 

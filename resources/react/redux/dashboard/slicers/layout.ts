@@ -11,5 +11,5 @@ export const layoutSlice = createSlice({
   reducers: layoutActions,
 })
 
-export const { changeLayoutTheme } = layoutSlice.actions;
+export const { toggleDarkTheme, toggleSidebarOpen } = layoutSlice.actions;
 export default layoutSlice.reducer

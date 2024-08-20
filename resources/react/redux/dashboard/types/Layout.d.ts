@@ -1,5 +1,5 @@
 
 export type LayoutState = {
-  currentTheme: string;
-  themeId: string;
+  darkMode: boolean;
+  sidebarOpen: boolean;
 }

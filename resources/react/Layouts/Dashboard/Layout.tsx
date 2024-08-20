@@ -15,12 +15,14 @@ const Layout: RPL = ({ children, title }) => {
     <Fragment>
       <Head title={title} />
       <ThemeProvider>
-        <main className="flex flex-col">
+        <main className="flex flex-col h-screen bg-primary-foreground">
           <Navbar />
-          <section className="flex">
+          <section className="flex flex-1 overflow-hidden">
             <Sidebar />
-            <div className="flex-1">
-              {children}
+            <div className="flex flex-col overflow-auto flex-1">
+              <div className="container pt-2">
+                {children}
+              </div>
             </div>
           </section>
         </main>
