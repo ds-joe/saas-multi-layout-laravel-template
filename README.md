@@ -1,6 +1,6 @@
-# Comprehensive SaaS Dashboard Template: Built with Laravel, React, Inertia
+# Comprehensive SaaS Multi Layouts Template: Built with Laravel, React, Inertia
 
-This template provides a solid foundation for building a SaaS dashboard application, combining powerful and modern technologies like Laravel, React, TypeScript, Inertia, Vite, Tailwind CSS, and Stripe. Whether you're starting a new project or enhancing an existing one, this template is designed to streamline your development process and help you create a robust, scalable, and user-friendly SaaS platform.
+This template provides a solid foundation for building a SaaS multi layouts application, combining powerful and modern technologies like Laravel, React, TypeScript, Inertia, Vite, Tailwind CSS, and Stripe. Whether you're starting a new project or enhancing an existing one, this template is designed to streamline your development process and help you create a robust, scalable, and user-friendly SaaS platform.
 
 [![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ds-joe)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/youssef-bibawi-joe)
@@ -16,6 +16,7 @@ This template provides a solid foundation for building a SaaS dashboard applicat
 - **[Sass](https://sass-lang.com/)**: the most mature, stable, and powerful professional grade CSS extension language in the world. 
 - **[Shadcn](https://ui.shadcn.com/docs)**: A Lightweight CSS-in-JS Library.
 - **[Laravel Modules](https://laravelmodules.com)**: is a Laravel package which was created to manage your large Laravel app using modules. 
+- **[Spatie Permissions](https://spatie.be/docs/laravel-permission/v6/introduction)**: is a Laravel package which was created to manage user permissions and roles. 
 -- **[react-icons](https://react-icons.github.io/react-icons/)**:  which utilizes ES6 imports that allows you to include only the icons that your project is using
 
 ## Getting Started
