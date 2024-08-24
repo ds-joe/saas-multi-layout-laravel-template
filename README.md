@@ -17,7 +17,7 @@ This template provides a solid foundation for building a SaaS multi layouts appl
 - **[Shadcn](https://ui.shadcn.com/docs)**: A Lightweight CSS-in-JS Library.
 - **[Laravel Modules](https://laravelmodules.com)**: is a Laravel package which was created to manage your large Laravel app using modules. 
 - **[Spatie Permissions](https://spatie.be/docs/laravel-permission/v6/introduction)**: is a Laravel package which was created to manage user permissions and roles. 
--- **[react-icons](https://react-icons.github.io/react-icons/)**:  which utilizes ES6 imports that allows you to include only the icons that your project is using
+- **[react-icons](https://react-icons.github.io/react-icons/)**:  which utilizes ES6 imports that allows you to include only the icons that your project is using.
 
 ## Getting Started
 
