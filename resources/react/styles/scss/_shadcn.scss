@@ -1,72 +1,78 @@
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: #FFFFFF;
+    --foreground: #0f172a;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
+    --popover: #00000000;
+    --popover-foreground: #0f172a;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card: #00000000;
+    --card-foreground: #0f172a;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: #0f172a;
+    --primary-foreground: #f8fafc;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: #ff0000;
+    --destructive-foreground: #f8fafc;
 
-    --water: 202, 82%, 44%;
-    --water-foreground: 225, 100%, 99%;
+    --water: #1489cc;
+    --water-foreground: #fafbff;
 
-    --ring: 215 20.2% 65.1%;
+    --danger: #d94126; // Right now has no dark color because it works fine in both.
+    --danger-foreground: #fafbff;
+
+    --dark: #0d0826; // Right now has no dark color because it works fine in both.
+    --dark-foreground: #FFFFFF;
+
+    --ring: #94a3b8;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
+    --background: #030711;
+    --foreground: #e1e7ef;
 
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
+    --muted: #0f1629;
+    --muted-foreground: #7f8ea3;
 
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: #1d283a;
+    --accent-foreground: #f8fafc;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
+    --popover: #030711;
+    --popover-foreground: #94a3b8;
 
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
+    --border: #1d283a;
+    --input: #1d283a;
 
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
+    --card: #030711;
+    --card-foreground: #e1e7ef;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
+    --primary: #f8fafc;
+    --primary-foreground: #020205;
 
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: #0f172a;
+    --secondary-foreground: #f8fafc;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: #811d1d;
+    --destructive-foreground: #f8fafc;
 
-    --water: 208, 99%, 65%;
-    --water-foreground: 225, 100%, 99%;
+    --water: #4dacfe;
+    --water-foreground: #fafbff;
 
-    --ring: 216 34% 17%;
+    --ring: #1d283a;
 
     --radius: 0.5rem;
   }

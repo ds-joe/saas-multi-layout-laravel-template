@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Core
+@import "./fonts";
+@import "./variables";
+@import "../shadcn";
+
+// Layouts
+@import "./layout";
+@import "./pages";

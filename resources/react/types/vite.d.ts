@@ -28,13 +28,15 @@ declare global {
   /** ***********************************************************************
    *  In coming data from sever
    ************************************************************************ */
-  type ServerPageProps<P = {}, D = Record<string, any>> = SetupOptions<
-    unknown,
-    P
-  >["props"]["initialPage"]["props"] & {
+  type ServerPageProps<P = {}, D = Record<string, any>> = {
     auth: {
       user?: User;
     };
     page_words: Record<string, string>;
-  };
+  } & SetupOptions<
+    unknown,
+    P
+  >["props"]["initialPage"]["props"]
+
+
 }

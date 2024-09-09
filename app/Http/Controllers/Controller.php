@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-final class Controller
+abstract class Controller
 {
     /**
      * Layout words.
@@ -18,7 +18,7 @@ final class Controller
      * @param array $words
      * @return array
      */
-    final protected function setLayoutWords(array $words): array
+    protected function setLayoutWords(array $words): array
     {
         $this->layout_words = array_unique(array_merge($this->layout_words, $words));
         return $this->layout_words;
@@ -29,7 +29,7 @@ final class Controller
      * 
      * @return array
      */
-    final protected function getLayoutWords(): array
+    protected function getLayoutWords(): array
     {
         return $this->layout_words;
     }

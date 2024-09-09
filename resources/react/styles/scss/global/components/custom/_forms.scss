@@ -1,0 +1,43 @@
+@layer components {
+  .form {
+    @apply flex flex-col gap-4;
+  }
+
+  .form-group {
+    @apply flex flex-col gap-2;
+  }
+
+  .float-input {
+    @apply relative;
+
+    label {
+      @apply absolute left-3 top-2 text-muted-foreground transition-all font-semibold;
+
+      &:has(.icon) {
+        @apply flex items-center gap-2;
+      }
+    }
+
+    input {
+      @apply placeholder:text-transparent relative;
+
+      &.error {
+        @apply border-[var(--danger)] ring-danger text-danger;
+      }
+    }
+
+    input:focus+label,
+    input:not(:placeholder-shown)+label {
+      @apply -translate-y-[18px];
+    }
+
+    input:not(:placeholder-shown)+label {
+      @apply bg-background text-foreground px-1 text-sm;
+    }
+
+    input:placeholder-shown+label {
+      @apply translate-y-0;
+
+    }
+  }
+}

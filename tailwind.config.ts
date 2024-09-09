@@ -4,6 +4,7 @@ import shadcnAnimation from "./config/tailwind/shadcn/animation"
 import shadcnBorderRadius from "./config/tailwind/shadcn/borderRadius"
 import shadcnColors from "./config/tailwind/shadcn/colors"
 import shadcnKeyframes from "./config/tailwind/shadcn/keyframes"
+import shadcnOpacity from "./config/tailwind/shadcn/opacity";
 
 // Custom configs
 import customFonts from "./config/tailwind/custom/fonts";
@@ -43,6 +44,9 @@ const config = {
       animation: {
         ...shadcnAnimation
       },
+      opacity: {
+        ...shadcnOpacity
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

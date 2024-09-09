@@ -15,7 +15,7 @@ const Layout: RPL = ({ children, title }) => {
     <Fragment>
       <Head title={title} />
       <ThemeProvider>
-        <main className="flex flex-col h-screen bg-primary-foreground">
+        <main className="flex flex-col h-screen bg-primary-foreground  ">
           <Navbar />
           <section className="flex flex-1 overflow-hidden">
             <Sidebar />

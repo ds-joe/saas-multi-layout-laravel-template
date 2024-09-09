@@ -4,7 +4,6 @@ import DashboardLayout from "@/Layouts/Dashboard";
 const Home: RP = () => {
   return (
     <div className="flex flex-col">
-
     </div>
   )
 }
