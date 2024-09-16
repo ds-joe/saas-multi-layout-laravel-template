@@ -4,7 +4,7 @@ import { AxiosInstance } from "axios";
 import React, { ReactNode } from "react";
 import { TypeOptions } from "react-toastify";
 import { User } from "./types/Models/User";
-
+import { route as ziggyRoute } from 'ziggy-js';
 
 declare global {
 
@@ -12,6 +12,9 @@ declare global {
   interface Window {
     axios: AxiosInstance;
   }
+
+  // Ziggy route
+  var route: typeof ziggyRoute;
 
   /** ***********************************************************************
    * Components & pages

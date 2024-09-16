@@ -1,5 +1,5 @@
 // Dependencies
-import { usePage } from "@inertiajs/react";
+import { usePage, useForm } from "@inertiajs/react";
 
 // Layout
 import Auth from "@/Layouts/Website/Auth";
@@ -15,11 +15,15 @@ import { Label } from "@/Components/Global/Shadcn/ui/label";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa6";
 
 // Types
-import type { FormEvent } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 
 const Login: RP = () => {
   const { page_words } = usePage().props as ServerPageProps;
-
+  const { data, setData, processing, post } = useForm({
+    email: '',
+    password: '',
+    remember_me: false,
+  });
 
   /**
    * Handle form submit
@@ -27,9 +31,9 @@ const Login: RP = () => {
    * @param { FormEvent } e
    * @return { void }
    */
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
-    // TODO: handle form submission
+    post(route('auth.login'));
   }
 
   return (
@@ -42,15 +46,15 @@ const Login: RP = () => {
         <h1 className="form-title">{page_words?.login}</h1>
 
         <div className="mt-10 sm:grid sm:grid-cols-1 md:flex items-center gap-3 justify-center">
-          <Button variant={'danger'} className="flex items-center gap-2 font-bold w-full md:w-fit ">
+          <Button disabled variant={'danger'} className="flex items-center gap-2 font-bold w-full md:w-fit ">
             <FaGoogle />
             {page_words?.google}
           </Button>
-          <Button variant={'water'} className="flex items-center gap-2 mt-3 w-full md:w-fit md:mt-0 font-bold">
+          <Button disabled variant={'water'} className="flex items-center gap-2 mt-3 w-full md:w-fit md:mt-0 font-bold">
             <FaFacebook />
             {page_words?.facebook}
           </Button>
-          <Button className="flex items-center gap-2 font-bold mt-3 w-full md:w-fit md:mt-0">
+          <Button disabled className="flex items-center gap-2 font-bold mt-3 w-full md:w-fit md:mt-0">
             <FaGithub />
             {page_words?.github}
           </Button>
@@ -67,6 +71,8 @@ const Login: RP = () => {
               className="w-full"
               type="email"
               label={page_words?.email}
+              onChange={(e) => setData('email', e.target.value)}
+              value={data.email}
               required
             />
           </FormGroup>
@@ -75,18 +81,24 @@ const Login: RP = () => {
               className="w-full"
               type="password"
               label={page_words?.password}
+              onChange={(e) => setData('password', e.target.value)}
+              value={data.password}
               required
             />
           </FormGroup>
           <div className="my-3 flex items-center justify-between">
             <FormGroup className="flex items-center flex-row  gap-2">
-              <Checkbox id="remember_me" />
+              <Checkbox
+                id="remember_me"
+                onChange={(e) => setData('remember_me', (e as ChangeEvent<HTMLInputElement>).target.checked)}
+                value={data.email}
+              />
               <Label className="text-base" htmlFor="remember_me" >{page_words?.remember_me}</Label>
             </FormGroup>
-            <Button type="button" variant={'link'}>{page_words?.forgot_your_password}</Button>
+            <Button disabled type="button" variant={'link'}>{page_words?.forgot_your_password}</Button>
           </div>
           <FormGroup>
-            <Button type="submit" size={'lg'} className="w-full">{page_words?.continue}</Button>
+            <Button type="submit" disabled={processing} size={'lg'} className="w-full">{page_words?.continue}</Button>
           </FormGroup>
         </Form>
 

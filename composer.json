@@ -13,7 +13,7 @@
         "laravel/tinker": "^2.9",
         "nwidart/laravel-modules": "^11.0",
         "spatie/laravel-permission": "^6.9",
-        "tightenco/ziggy": "^2.0"
+        "tightenco/ziggy": "^2.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

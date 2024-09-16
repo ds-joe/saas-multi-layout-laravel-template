@@ -47,6 +47,7 @@
         "sass": "^1.77.8",
         "tailwind-merge": "^2.5.2",
         "tailwindcss-animate": "^1.0.7",
-        "typescript": "^5.5.4"
+        "typescript": "^5.5.4",
+        "ziggy-js": "^2.3.0"
     }
 }

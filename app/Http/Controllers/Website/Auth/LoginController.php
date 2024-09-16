@@ -22,7 +22,7 @@ class LoginController extends AuthController
 
   /**
    * Display login page.
-   * 
+   *
    * @return Response
    */
   public function index(): Response
@@ -36,13 +36,13 @@ class LoginController extends AuthController
 
   /**
    * Normal Login
-   * 
+   *
    * @param LoginRequest $request
    * @return RedirectResponse
    */
   public function login(LoginRequest $request): RedirectResponse
   {
-    if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'remember' => $request->remember_me,])) {
+    if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember_me)) {
       return redirect()->route('dashboard.home');
     }
     return back()->with(Notification::create(__('website/auth.login_credentials_invalid'), NotificationType::warning));

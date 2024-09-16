@@ -1,14 +1,9 @@
 <?php
 
-use App\Facade\Inertia;
-use App\Services\Inertia\Enums\RenderLayout;
+use App\Http\Controllers\Dashboard\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-  return Inertia::render(
-    RenderLayout::dashboard,
-    'home',
-    []
-  );
+Route::middleware(['auth', 'web'])->controller(HomeController::class)->group(function () {
+  Route::get('/', 'index')->name('dashboard.home');
 });
