@@ -23,7 +23,7 @@ const Login: RP = () => {
 
   /**
    * Handle form submit
-   * 
+   *
    * @param { FormEvent } e
    * @return { void }
    */
@@ -41,16 +41,16 @@ const Login: RP = () => {
       <div className="form-side">
         <h1 className="form-title">{page_words?.login}</h1>
 
-        <div className="mt-10 flex items-center gap-3 justify-center">
-          <Button variant={'danger'} className="flex items-center gap-2 font-bold">
+        <div className="mt-10 sm:grid sm:grid-cols-1 md:flex items-center gap-3 justify-center">
+          <Button variant={'danger'} className="flex items-center gap-2 font-bold w-full md:w-fit ">
             <FaGoogle />
             {page_words?.google}
           </Button>
-          <Button variant={'water'} className="flex items-center gap-2 font-bold">
+          <Button variant={'water'} className="flex items-center gap-2 mt-3 w-full md:w-fit md:mt-0 font-bold">
             <FaFacebook />
             {page_words?.facebook}
           </Button>
-          <Button className="flex items-center gap-2 font-bold">
+          <Button className="flex items-center gap-2 font-bold mt-3 w-full md:w-fit md:mt-0">
             <FaGithub />
             {page_words?.github}
           </Button>
