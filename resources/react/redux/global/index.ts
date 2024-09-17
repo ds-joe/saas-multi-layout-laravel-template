@@ -1,9 +1,5 @@
-import { combineReducers } from '@reduxjs/toolkit'
+import { combineReducers } from '@reduxjs/toolkit';
 
-
-const globalReducers = combineReducers({
-
-});
-
+const globalReducers = combineReducers({});
 
 export default globalReducers;

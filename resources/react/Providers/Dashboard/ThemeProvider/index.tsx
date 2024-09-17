@@ -1,12 +1,10 @@
 // Dependencies
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect } from 'react';
 
 // Assets
-import "@/styles/scss/dashboard/main.scss";
+import '@/styles/scss/dashboard/main.scss';
 
 const ThemeProvider: RPO = ({ children }) => {
-
-
   // Implement dark theme
   useEffect(() => {
     const storage = localStorage.getItem('dark-theme');
@@ -21,14 +19,10 @@ const ThemeProvider: RPO = ({ children }) => {
     // Cleanup
     return () => {
       document.documentElement.classList.remove('dashboard-layout');
-    }
+    };
   }, []);
 
-  return (
-    <Fragment>
-      {children}
-    </Fragment>
-  )
-}
+  return <Fragment>{children}</Fragment>;
+};
 
 export default ThemeProvider;

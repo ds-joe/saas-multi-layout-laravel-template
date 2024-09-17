@@ -26,18 +26,17 @@
       }
     }
 
-    input:focus+label,
-    input:not(:placeholder-shown)+label {
+    input:focus + label,
+    input:not(:placeholder-shown) + label {
       @apply -translate-y-[18px];
     }
 
-    input:not(:placeholder-shown)+label {
+    input:not(:placeholder-shown) + label {
       @apply bg-background text-foreground px-1 text-sm;
     }
 
-    input:placeholder-shown+label {
+    input:placeholder-shown + label {
       @apply translate-y-0;
-
     }
   }
 }

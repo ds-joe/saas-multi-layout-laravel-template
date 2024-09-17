@@ -15,11 +15,12 @@ This template provides a solid foundation for building a SaaS multi layouts appl
 - **[Vitest](https://vitest.dev/)**: A blazing-fast unit testing framework with a Jest-compatible API, built for Vite.
 - **[Jest](https://jestjs.io/)**: Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 - **[Tailwind CSS](https://tailwindcss.com/docs)**: Utility-first CSS framework for rapid UI development.
-- **[Sass](https://sass-lang.com/)**: the most mature, stable, and powerful professional grade CSS extension language in the world. 
+- **[Sass](https://sass-lang.com/)**: the most mature, stable, and powerful professional grade CSS extension language in the world.
 - **[Shadcn](https://ui.shadcn.com/docs)**: A Lightweight CSS-in-JS Library.
-- **[Laravel Modules](https://laravelmodules.com)**: is a Laravel package which was created to manage your large Laravel app using modules. 
-- **[Spatie Permissions](https://spatie.be/docs/laravel-permission/v6/introduction)**: is a Laravel package which was created to manage user permissions and roles. 
-- **[react-icons](https://react-icons.github.io/react-icons/)**:  which utilizes ES6 imports that allows you to include only the icons that your project is using.
+- **[Laravel Modules](https://laravelmodules.com)**: is a Laravel package which was created to manage your large Laravel app using modules.
+- **[Spatie Permissions](https://spatie.be/docs/laravel-permission/v6/introduction)**: is a Laravel package which was created to manage user permissions and roles.
+- **[react-icons](https://react-icons.github.io/react-icons/)**: which utilizes ES6 imports that allows you to include only the icons that your project is using.
+- **[prettier](https://prettier.io/)**: Prettier is an opinionated code formatter.
 
 ## Getting Started
 
@@ -41,6 +42,7 @@ cd saas-dashboard-template
 ```
 
 2. **Install backend dependencies:**
+
 ```bash
 composer install
 cp .env.example .env
@@ -48,25 +50,30 @@ php artisan key:generate
 ```
 
 3. **Install frontend dependencies:**
+
 ```bash
 npm install
 ```
 
 4. **Configure your .env file:**
-  - Update your database and Stripe credentials in the .env file.
+
+- Update your database and Stripe credentials in the .env file.
 
 5. **Run migrations:**
+
 ```bash
 php artisan migrate
 ```
 
 6. **Start the development servers:**
+
 ```bash
 npm start
 php artisan serve
 ```
 
 7. **Application Test:**
+
 ```bash
 # Test Front-end with vitest
 npm test
@@ -78,6 +85,6 @@ npm run test:ts
 
 8. **Demo Data:**
 
-* User
+- User
   - email: joe@example.com
   - password: password

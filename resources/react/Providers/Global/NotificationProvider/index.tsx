@@ -1,16 +1,19 @@
 // Dependencies
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from 'react-toastify';
 
 // Styles
-import "react-toastify/dist/ReactToastify.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 // Types
-import type { NotificationProviderProps } from "@/types/Providers/Global/NotificationProvider";
-import type { ToastOptions } from "react-toastify";
+import type { NotificationProviderProps } from '@/types/Providers/Global/NotificationProvider';
+import type { ToastOptions } from 'react-toastify';
 
-const NotificationProvider: NotificationProviderProps = ({ children, options }) => {
+const NotificationProvider: NotificationProviderProps = ({
+  children,
+  options,
+}) => {
   const toastsOptions: ToastOptions = {
-    position: "top-right",
+    position: 'top-right',
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
@@ -19,15 +22,15 @@ const NotificationProvider: NotificationProviderProps = ({ children, options }) 
     draggable: true,
     pauseOnHover: true,
     theme: 'light',
-    ...(options ?? {})
-  }
+    ...(options ?? {}),
+  };
 
   return (
     <>
       {children}
       <ToastContainer {...toastsOptions} />
     </>
-  )
-}
+  );
+};
 
 export default NotificationProvider;

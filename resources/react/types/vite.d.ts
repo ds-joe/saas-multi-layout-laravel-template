@@ -1,13 +1,12 @@
 /// <reference types="vite/client" />
-import { SetupOptions } from "@inertiajs/inertia-react";
-import { AxiosInstance } from "axios";
-import React, { ReactNode } from "react";
-import { TypeOptions } from "react-toastify";
-import { User } from "./types/Models/User";
+import { SetupOptions } from '@inertiajs/inertia-react';
+import { AxiosInstance } from 'axios';
+import React, { ReactNode } from 'react';
+import { TypeOptions } from 'react-toastify';
+import { User } from './types/Models/User';
 import { route as ziggyRoute } from 'ziggy-js';
 
 declare global {
-
   // Axios
   interface Window {
     axios: AxiosInstance;
@@ -19,14 +18,15 @@ declare global {
   /** ***********************************************************************
    * Components & pages
    ************************************************************************ */
-  interface RC<P = {}> extends React.FC<P> { } // react component
+  interface RC<P = {}> extends React.FC<P> {} // react component
   interface RP<P = {}> extends React.FC<P> {
     layout?: (
-      page: SetupOptions<unknown, ServerPageProps>["props"]["initialPage"]
+      page: SetupOptions<unknown, ServerPageProps>['props']['initialPage'],
     ) => JSX.Element;
   } // react page
-  interface RPO<P = {}> extends React.FC<P & { children?: ReactNode }> { } // react provider
-  interface RPL<P = {}> extends React.FC<P & { children?: any, title?: string }> { } // React layout
+  interface RPO<P = {}> extends React.FC<P & { children?: ReactNode }> {} // react provider
+  interface RPL<P = {}>
+    extends React.FC<P & { children?: any; title?: string }> {} // React layout
 
   /** ***********************************************************************
    *  In coming data from sever
@@ -39,12 +39,6 @@ declare global {
     notification?: {
       message: string;
       type: TypeOptions;
-    }
-
-  } & SetupOptions<
-    unknown,
-    P
-  >["props"]["initialPage"]["props"]
-
-
+    };
+  } & SetupOptions<unknown, P>['props']['initialPage']['props'];
 }

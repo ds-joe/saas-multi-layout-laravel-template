@@ -1,13 +1,13 @@
 // Dependencies
-import { Fragment, useEffect } from "react";
-import { Head, usePage } from "@inertiajs/react";
+import { Fragment, useEffect } from 'react';
+import { Head, usePage } from '@inertiajs/react';
 
 // Hooks
-import useNotification from "@/hooks/useNotification";
+import useNotification from '@/hooks/useNotification';
 
 // Providers
-import ThemeProvider from "@/Providers/Website/ThemeProvider";
-import NotificationProvider from "@/Providers/Global/NotificationProvider";
+import ThemeProvider from '@/Providers/Website/ThemeProvider';
+import NotificationProvider from '@/Providers/Global/NotificationProvider';
 
 const Layout: RPL = ({ children, title }) => {
   const toast = useNotification();
@@ -33,7 +33,7 @@ const Layout: RPL = ({ children, title }) => {
         </NotificationProvider>
       </ThemeProvider>
     </Fragment>
-  )
-}
+  );
+};
 
 export default Layout;

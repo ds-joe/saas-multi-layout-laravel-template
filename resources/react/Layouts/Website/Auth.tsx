@@ -1,5 +1,5 @@
 // Dependencies
-import Layout from "./index";
+import Layout from './index';
 
 const Auth: RPL = (props) => {
   return (
@@ -10,7 +10,7 @@ const Auth: RPL = (props) => {
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
 export default Auth;

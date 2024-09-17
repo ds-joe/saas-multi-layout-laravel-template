@@ -1,6 +1,6 @@
 @layer base {
   :root {
-    --background: #FFFFFF;
+    --background: #ffffff;
     --foreground: #0f172a;
 
     --muted: #f1f5f9;
@@ -34,7 +34,7 @@
     --danger-foreground: #fafbff;
 
     --dark: #0d0826; // Right now has no dark color because it works fine in both.
-    --dark-foreground: #FFFFFF;
+    --dark-foreground: #ffffff;
 
     --ring: #94a3b8;
 
@@ -85,6 +85,8 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 }

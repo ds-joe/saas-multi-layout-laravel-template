@@ -1,13 +1,11 @@
 // Types
 // import type { PayloadAction } from "@reduxjs/toolkit";
-import type { LayoutState } from "../types/Layout";
-
+import type { LayoutState } from '../types/Layout';
 
 export default {
-
   /**
    * Toggle dark theme
-   * 
+   *
    * @param { LayoutState } state
    * @return { void }
    */
@@ -20,12 +18,11 @@ export default {
 
   /**
    * Toggle sidebar open.
-   * 
+   *
    * @param { LayoutState } state
    * @return { void }
    */
   toggleSidebarOpen: (state: LayoutState): void => {
     state.sidebarOpen = !state.sidebarOpen;
   },
-
-}
+};

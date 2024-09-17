@@ -1,7 +1,5 @@
 // Types
-import type { LayoutState } from "../types/Layout"
-
-
+import type { LayoutState } from '../types/Layout';
 
 const initialState: LayoutState = {
   darkMode: (() => {
@@ -11,8 +9,7 @@ const initialState: LayoutState = {
     }
     return false;
   })(),
-  sidebarOpen: false
-}
-
+  sidebarOpen: false,
+};
 
 export default initialState;

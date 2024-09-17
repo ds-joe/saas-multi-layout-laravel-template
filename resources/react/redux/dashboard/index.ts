@@ -1,11 +1,11 @@
 // Dependencies
-import { combineReducers } from '@reduxjs/toolkit'
+import { combineReducers } from '@reduxjs/toolkit';
 
 // Slicers
 import layout from './slicers/layout';
 
 const dashboardReducers = combineReducers({
-  layout
+  layout,
 });
 
 export default dashboardReducers;

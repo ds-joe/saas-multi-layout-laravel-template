@@ -5,17 +5,16 @@
     @apply relative z-20;
 
     &::after {
-      content: "";
+      content: '';
       @apply bg-[url('/images/website/auth/deco-right.png')] h-72 w-56 bg-center bg-cover bg-no-repeat absolute top-[40%] -translate-y-1/2 -right-0 -z-[1];
     }
-
   }
 
   .auth-content-card {
     @apply lg:max-w-6xl 2xl:max-w-full bg-white/50 shadow-xl w-full drop-shadow-sm h-full rounded-xl grid lg:grid-cols-2;
 
     &::after {
-      content: "";
+      content: '';
       @apply absolute left-0 top-0 bg-white/70 blur-lg -z-[1] w-full h-full;
     }
 
@@ -23,7 +22,7 @@
       @apply max-lg:hidden relative bg-[url('~/images/website/auth/Mask.png')] bg-cover bg-center bg-no-repeat w-full h-full rounded-3xl flex flex-col justify-center items-center;
 
       &::after {
-        content: "";
+        content: '';
         @apply bg-[url('~/images/website/auth/deco-left.png')] h-60 w-60 bg-center bg-cover bg-no-repeat absolute -top-10 -left-20 z-[11];
       }
 
@@ -34,7 +33,6 @@
       .info-text {
         @apply text-xl text-white/80 leading-relaxed font-semibold;
       }
-
     }
 
     .form-side {
@@ -44,7 +42,5 @@
         @apply text-3xl font-semibold text-foreground;
       }
     }
-
   }
-
 }

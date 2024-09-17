@@ -4,7 +4,7 @@ import { expect, vi, describe, it } from 'vitest';
 import Layout from './index';
 
 vi.mock('@inertiajs/react', async (importOriginal) => {
-  const actual = await importOriginal() as {};
+  const actual = (await importOriginal()) as {};
   return {
     ...actual,
     usePage: () => ({
@@ -12,9 +12,9 @@ vi.mock('@inertiajs/react', async (importOriginal) => {
         errors: {},
         auth: {
           user: {
-            name: 'John Doe'
-          }
-        }
+            name: 'John Doe',
+          },
+        },
       },
     }),
     Head: () => null,
@@ -22,13 +22,12 @@ vi.mock('@inertiajs/react', async (importOriginal) => {
 });
 
 describe('Dashboard Layout', function () {
-
   // Check if render correctly
   it('Render Correctly', function () {
     render(
       <Layout>
         <h1 data-testid="render-element">Hello, John Doe!</h1>
-      </Layout>
+      </Layout>,
     );
 
     const heading = screen.getByTestId('render-element');
@@ -36,7 +35,4 @@ describe('Dashboard Layout', function () {
   });
 
   // Other tests here..
-
 });
-
-

@@ -16,11 +16,10 @@ const TestComponent = () => {
 };
 
 test('useNotification hook works within NotificationProvider', () => {
-
   render(
     <NotificationProvider>
       <TestComponent />
-    </NotificationProvider>
+    </NotificationProvider>,
   );
 
   const heading = screen.getByTestId('render-element');

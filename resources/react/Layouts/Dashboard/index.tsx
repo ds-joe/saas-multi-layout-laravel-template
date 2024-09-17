@@ -1,11 +1,11 @@
 // Dependencies
-import { Fragment } from "react";
+import { Fragment } from 'react';
 
 // Providers
-import StoreProvider from "@/Providers/Dashboard/StoreProvider";
+import StoreProvider from '@/Providers/Dashboard/StoreProvider';
 
 // Layout Template
-import Layout from "./Layout";
+import Layout from './Layout';
 
 const DashboardLayout: RPL = (props) => {
   return (
@@ -14,7 +14,7 @@ const DashboardLayout: RPL = (props) => {
         <Layout {...props} />
       </StoreProvider>
     </Fragment>
-  )
-}
+  );
+};
 
 export default DashboardLayout;

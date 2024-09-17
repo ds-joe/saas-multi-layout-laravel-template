@@ -1,6 +1,6 @@
 // Dependencies
-import { ReactNode } from "react";
-import { toast as createToast, TypeOptions } from "react-toastify";
+import { ReactNode } from 'react';
+import { toast as createToast, TypeOptions } from 'react-toastify';
 
 const useNotification = () => {
   /**
@@ -12,25 +12,25 @@ const useNotification = () => {
    */
   const toast = (message: ReactNode, toastType: TypeOptions): void => {
     switch (toastType) {
-      case "default":
+      case 'default':
         createToast(message);
         break;
-      case "error":
+      case 'error':
         createToast.error(message);
         break;
-      case "success":
+      case 'success':
         createToast.success(message);
         break;
-      case "warning":
+      case 'warning':
         createToast.warning(message);
         break;
-      case "info":
+      case 'info':
         createToast.info(message);
         break;
     }
   };
 
   return toast;
-}
+};
 
 export default useNotification;

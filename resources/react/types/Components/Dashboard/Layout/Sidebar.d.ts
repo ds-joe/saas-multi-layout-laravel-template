@@ -1,5 +1,5 @@
-import type { ReactNode, InputHTMLAttributes } from "react";
-import type { IconType } from "react-icons";
+import type { ReactNode, InputHTMLAttributes } from 'react';
+import type { IconType } from 'react-icons';
 
 interface CollapsibleProps extends InputHTMLAttributes<HTMLDivElement> {
   title: string;
@@ -12,7 +12,7 @@ interface CollapsibleProps extends InputHTMLAttributes<HTMLDivElement> {
 interface CollapsibleItemProps extends InputHTMLAttributes<HTMLLIElement> {
   children?: ReactNode;
   active?: boolean;
-  Icon?: IconType,
+  Icon?: IconType;
   href?: string;
   childItem?: boolean;
   fold?: boolean;

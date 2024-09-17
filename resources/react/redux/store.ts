@@ -1,8 +1,8 @@
 // Dependencies
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
 // Reducers
-import dashboardReducers from './dashboard'
+import dashboardReducers from './dashboard';
 // import websiteReducers from './website'
 // import globalReducers from './global';
 
