@@ -12,5 +12,7 @@ return [
   'remember_me' => "Remember",
   'forgot_your_password' => "Forgot your password?",
   'continue' => "Continue",
-  'login_credentials_invalid' => "Incorrect email or password. Please try again."
+  'login_credentials_invalid' => "Incorrect email or password. Please try again.",
+  'login_successfully' => 'Login Successfully',
+  'logout_successfully' => "Logout Successfully"
 ];

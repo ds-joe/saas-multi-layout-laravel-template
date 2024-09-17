@@ -4,7 +4,6 @@ import { DashboardRootState } from "@/redux/store";
 
 // Components
 import Routes from "./Components/Routes";
-// import UserCard from "./Components/UserCard";
 
 
 const Sidebar: RC = () => {

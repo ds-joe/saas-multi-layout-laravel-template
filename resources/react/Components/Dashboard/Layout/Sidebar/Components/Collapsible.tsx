@@ -19,7 +19,7 @@ const Collapsible = forwardRef<HTMLDivElement, CollapsibleProps>(
 
     /**
      * Handle toggle collapsible.
-     * 
+     *
      * @return { void }
      */
     const toggleOpen = (): void => setIsOpen(!isOpen);
@@ -80,7 +80,7 @@ const CollapsibleItem = forwardRef<HTMLLIElement, CollapsibleItemProps>(({ child
 
 export function itemClasses(classes?: string) {
   return cn(
-    "text-primary w-full px-4 py-2 transition-color rounded-lg hover:bg-primary-foreground/80 transition-colors",
+    "text-primary w-full px-4 py-2 transition-color rounded-lg hover:bg-primary-foreground transition-colors",
     classes
   );
 }

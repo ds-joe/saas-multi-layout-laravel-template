@@ -15,7 +15,7 @@ const AdditionButtons: RC = () => {
 
   /**
    * Handle toggle dark theme.
-   * 
+   *
    * @return { void }
    */
   const toggleDarkMode = (): void => { dispatch(toggleDarkTheme()) };
@@ -26,6 +26,7 @@ const AdditionButtons: RC = () => {
         <HiOutlineLanguage className="text-xl" />
       </Button>
       <Button
+        disabled
         size={'icon'}
         variant={'secondary'}
         className={`rounded-full ${darkMode && "bg-water text-water-foreground hover:bg-water"}`}

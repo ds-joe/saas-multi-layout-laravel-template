@@ -14,7 +14,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './resources/react/testing/config.ts',
+    setupFiles: './resources/react/bootstrap/testingSetup.ts',
   },
   server: {
     watch: {

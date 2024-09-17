@@ -26,7 +26,7 @@ declare global {
     ) => JSX.Element;
   } // react page
   interface RPO<P = {}> extends React.FC<P & { children?: ReactNode }> { } // react provider
-  interface RPL<P = {}> extends React.FC<P & { children?: ReactNode, title?: string }> { } // React layout
+  interface RPL<P = {}> extends React.FC<P & { children?: any, title?: string }> { } // React layout
 
   /** ***********************************************************************
    *  In coming data from sever
@@ -36,6 +36,11 @@ declare global {
       user?: User;
     };
     page_words: Record<string, string>;
+    notification?: {
+      message: string;
+      type: TypeOptions;
+    }
+
   } & SetupOptions<
     unknown,
     P

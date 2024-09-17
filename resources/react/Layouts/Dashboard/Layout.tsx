@@ -1,8 +1,17 @@
 // Dependencies
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
+import { usePage } from "@inertiajs/react";
+
+// Hooks
+import useNotification from "@/hooks/useNotification";
 
 // Providers
 import ThemeProvider from "@/Providers/Dashboard/ThemeProvider";
+import NotificationProvider from "@/Providers/Global/NotificationProvider";
+
+// Redux
+import { useSelector } from "react-redux";
+import { DashboardRootState } from "@/redux/store";
 
 // Components
 import { Head } from "@inertiajs/react";
@@ -10,22 +19,38 @@ import Sidebar from "@/Components/Dashboard/Layout/Sidebar";
 import Navbar from "@/Components/Dashboard/Layout/Navbar";
 
 const Layout: RPL = ({ children, title }) => {
+  const toast = useNotification();
+  const { notification } = usePage().props as ServerPageProps;
+  const layoutSettings = useSelector((state: DashboardRootState) => state.dashboard.layout)
+
+  // Render server notifications
+  useEffect(() => {
+    if (notification) {
+      toast(notification.message, notification.type);
+    }
+  }, [notification]);
 
   return (
     <Fragment>
       <Head title={title} />
       <ThemeProvider>
-        <main className="flex flex-col h-screen bg-primary-foreground  ">
-          <Navbar />
-          <section className="flex flex-1 overflow-hidden">
-            <Sidebar />
-            <div className="flex flex-col overflow-auto flex-1">
-              <div className="container pt-2">
-                {children}
+        <NotificationProvider options={{
+          theme: layoutSettings.darkMode ? 'dark' : 'light'
+        }}>
+
+          <main className="flex flex-col h-screen bg-primary-foreground  ">
+            <Navbar />
+            <section className="flex flex-1 overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col overflow-auto flex-1">
+                <div className="container pt-2">
+                  {children}
+                </div>
               </div>
-            </div>
-          </section>
-        </main>
+            </section>
+          </main>
+
+        </NotificationProvider>
       </ThemeProvider>
     </Fragment>
   )

@@ -43,8 +43,19 @@ class LoginController extends AuthController
   public function login(LoginRequest $request): RedirectResponse
   {
     if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember_me)) {
-      return redirect()->route('dashboard.home');
+      return redirect()->route('dashboard.home')->with(Notification::create(__('website/auth.login_successfully'), NotificationType::success));
     }
     return back()->with(Notification::create(__('website/auth.login_credentials_invalid'), NotificationType::warning));
+  }
+
+  /**
+   * Logout
+   *
+   * @return RedirectResponse
+   */
+  public function logout(): RedirectResponse
+  {
+    Auth::logout();
+    return redirect()->route('login')->with(Notification::create(__('website/auth.logout_successfully'), NotificationType::success));
   }
 }

@@ -9,10 +9,11 @@ import FloatInput from "./FloatInput";
 // Types
 import type { FormProps } from "@/types/Components/Global/Custom/Form";
 
-const Form = forwardRef<HTMLFormElement, FormProps>((props) => {
+const Form = forwardRef<HTMLFormElement, FormProps>((props, ref) => {
   return (
     <form
       {...props}
+      ref={ref}
       className={cn('form', props.className)}>
       {props.children}
     </form>

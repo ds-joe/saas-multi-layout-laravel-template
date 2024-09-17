@@ -6,14 +6,14 @@ import { cn } from "@/utilities/tailwind/cn";
 import type { FloatInputProps } from "@/types/Components/Global/Custom/Form";
 import { Input } from "../../Shadcn/ui/input";
 
-const FloatInput = forwardRef<HTMLInputElement, FloatInputProps>((props) => {
+const FloatInput = forwardRef<HTMLInputElement, FloatInputProps>((props, ref) => {
   return (
     <div className={cn(`float-input`, props.divClassName)}>
       <Input
         className={cn(`${props.error && 'error'}`,
           props.className
         )}
-        ref={props.ref}
+        ref={ref}
         placeholder=" "
         {...props}
       />
