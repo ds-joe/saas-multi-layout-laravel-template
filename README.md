@@ -12,6 +12,7 @@ This template provides a solid foundation for building a SaaS multi layouts appl
 - **[React](https://react.dev/) & [TypeScript](https://www.typescriptlang.org/)**: Modern frontend library with static type checking.
 - **[Inertia](https://inertiajs.com/)**: using classic server-side routing. Works with any backend.
 - **[Vite](https://vitejs.dev/guide/)**: Fast build tool for modern web projects.
+- **[Vitest](https://vitest.dev/)**: A blazing-fast unit testing framework with a Jest-compatible API, built for Vite.
 - **[Tailwind CSS](https://tailwindcss.com/docs)**: Utility-first CSS framework for rapid UI development.
 - **[Sass](https://sass-lang.com/)**: the most mature, stable, and powerful professional grade CSS extension language in the world. 
 - **[Shadcn](https://ui.shadcn.com/docs)**: A Lightweight CSS-in-JS Library.
