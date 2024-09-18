@@ -31,7 +31,7 @@ const UserCard = () => {
     `${user.username[0]}${user.username[1]}`.toLocaleUpperCase())(auth.user);
 
   return (
-    <Card className="relative rounded-lg col-span-12 lg:col-span-5 bg-background h-full shadow">
+    <Card className="relative rounded-lg lg:col-span-5 bg-background h-full shadow">
       <CardContent className="pt-10 flex flex-col items-center justify-center">
         <Avatar
           onClick={() => setAvatarViewer(true)}

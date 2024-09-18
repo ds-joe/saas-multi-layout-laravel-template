@@ -35,7 +35,7 @@ class HandleInertiaRequests extends Middleware
     return [
       ...parent::share($request),
       'auth' => [
-        'user' => new InertiaUserResource($request->user()),
+        'user' => $request->user() ? new InertiaUserResource($request->user()) : null,
       ],
       Notification::getSessionName() => Notification::getSessionNotification()
     ];

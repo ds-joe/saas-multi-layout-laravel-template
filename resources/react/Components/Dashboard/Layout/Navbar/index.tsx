@@ -26,7 +26,7 @@ const Navbar: RC = () => {
   };
 
   return (
-    <nav className="w-full py-3 bg-background dark:bg-dark border-b border-b/5 z-10 shadow">
+    <nav className="w-full  py-3 bg-background dark:bg-dark border-b border-b/5 z-[11] shadow">
       <div className="container flex items-center justify-between gap-6">
         <LogoSide />
         <div className="flex items-center gap-2">

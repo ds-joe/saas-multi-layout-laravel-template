@@ -17,6 +17,7 @@ import { DashboardRootState } from '@/redux/store';
 import { Head } from '@inertiajs/react';
 import Sidebar from '@/Components/Dashboard/Layout/Sidebar';
 import Navbar from '@/Components/Dashboard/Layout/Navbar';
+import PageContentCover from '@/Components/Dashboard/Layout/PageContentConver';
 
 const Layout: RPL = ({ children, title }) => {
   const toast = useNotification();
@@ -43,9 +44,14 @@ const Layout: RPL = ({ children, title }) => {
         >
           <main className="flex flex-col h-screen bg-primary-foreground  ">
             <Navbar />
-            <section className="flex flex-1 overflow-hidden">
+            <section className="flex flex-1 overflow-hidden relative">
               <Sidebar />
-              <div className="relative flex flex-col overflow-auto flex-1 overflow-x-scroll">
+              <div
+                className={`relative flex flex-col overflow-y-auto flex-1 ${layoutSettings.sidebarOpen && 'max-md:overflow-y-hidden'}`}
+              >
+                <PageContentCover
+                  visible={layoutSettings.sidebarOpen?.toString()}
+                />
                 <div className="container pt-6">{children}</div>
               </div>
             </section>

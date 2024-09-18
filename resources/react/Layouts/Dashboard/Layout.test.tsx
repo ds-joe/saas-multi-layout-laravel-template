@@ -22,6 +22,10 @@ vi.mock('@inertiajs/react', async (importOriginal) => {
   };
 });
 
+(global as any).route = (name: string) => {
+  return `${name}`;
+};
+
 describe('Dashboard Layout', function () {
   // Check if render correctly
   it('Render Correctly', function () {

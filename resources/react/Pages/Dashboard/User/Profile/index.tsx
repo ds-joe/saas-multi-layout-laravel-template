@@ -12,7 +12,7 @@ const Profile: RP = () => {
   return (
     <section className="flex flex-col gap-4">
       <HeroCard />
-      <div className="grid gap-4 lg:grid-cols-12">
+      <div className="grid gap-4 max-lg:grid-cols-1 lg:grid-cols-12">
         <UserCard />
         <Details />
       </div>
