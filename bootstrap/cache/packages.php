@@ -73,6 +73,17 @@
       0 => 'Pest\\Laravel\\PestServiceProvider',
     ),
   ),
+  'spatie/laravel-image-optimizer' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\LaravelImageOptimizer\\ImageOptimizerServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'ImageOptimizer' => 'Spatie\\LaravelImageOptimizer\\Facades\\ImageOptimizer',
+    ),
+  ),
   'spatie/laravel-permission' => 
   array (
     'providers' => 

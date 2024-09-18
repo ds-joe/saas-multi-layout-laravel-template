@@ -43,10 +43,10 @@ const Details: RC = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="personal-info">
-            Make changes to your account here.
+
           </TabsContent>
           <TabsContent value="linked-account">
-            Change your password here.
+
           </TabsContent>
         </Tabs>
       </CardContent>

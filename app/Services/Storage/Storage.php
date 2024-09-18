@@ -5,6 +5,7 @@ namespace App\Services\Storage;
 use App\Services\Storage\Traits\Paths;
 use App\Services\Storage\Traits\Rules;
 use Illuminate\Support\Facades\Storage as FStorage;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
 
 class Storage
 {
@@ -35,7 +36,12 @@ class Storage
     $newFilename = md5($filename . time()) . '.' . $extension;
 
     # Store the file using the specified disk
-    return $file->storeAs($path, $newFilename, $this->uploadsDisk);
+    $storePath = $file->storeAs($path, $newFilename, $this->uploadsDisk);;
+
+    # Optimize the image using Spatie ImageOptimizer
+    OptimizerChainFactory::create()->optimize(FStorage::disk($this->uploadsDisk)->path($storePath));
+
+    return $storePath;
   }
 
   /**

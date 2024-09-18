@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Facade\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -66,13 +67,27 @@ class User extends Authenticatable
     return $this->hasMany(UserMeta::class);
   }
 
+
+
   /**
-   * Get user avatar
+   * Handle avatar if there
+   *
+   * @param $value
+   * @return ?string
+   */
+  public function getAvatarAttribute(): ?string
+  {
+    $value = $this->meta()->where('key', '_avatar')->first()->value ?? null;
+    return $value ? Storage::getFileUrl($value, true) : null;
+  }
+
+  /**
+   * Get user avatar raw
    *
    * @return string|null
    */
-  public function getAvatarAttribute(): string|null
+  public function getAvatarRawAttribute(): string|null
   {
-    return $this->meta()->where('key', '_avatar')->value('value');
+    return $this->meta()->where('key', '_avatar')->first()->value ?? null;
   }
 }

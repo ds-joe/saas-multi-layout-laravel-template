@@ -9,7 +9,7 @@ import type { PageContentCoverProps } from '@/types/Components/Dashboard/Layout/
 
 const PageContentCover = forwardRef<HTMLDivElement, PageContentCoverProps>(
   (props, ref) => {
-    const visible = props.visible == 'false' ? false : true;
+    const visible = props.visible == 'false' || !props.visible ? false : true;
 
     return (
       <div

@@ -13,7 +13,7 @@ class UserObserver
    * @var array
    */
   protected $metaData = [
-    '_first_name' => null,
+    '_first_name' => 'Demo',
     '_last_name' => null,
     '_avatar' => null,
     '_phone' => null,
