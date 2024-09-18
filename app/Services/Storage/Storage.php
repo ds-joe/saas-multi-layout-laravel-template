@@ -11,6 +11,13 @@ class Storage
   use Paths, Rules;
 
   /**
+   * Uploads disk
+   *
+   * @var string
+   */
+  private string $uploadsDisk = 'uploads';
+
+  /**
    * Store file.
    *
    * @param string $path
@@ -28,7 +35,7 @@ class Storage
     $newFilename = md5($filename . time()) . '.' . $extension;
 
     # Store the file using the specified disk
-    return $file->storeAs($path, $newFilename, 'public');
+    return $file->storeAs($path, $newFilename, $this->uploadsDisk);
   }
 
   /**
@@ -46,7 +53,7 @@ class Storage
 
     # Delete the old file
     if ($oldFilePath) {
-      FStorage::disk('public')->exists($oldFilePath) && $this->delete($oldFilePath);
+      FStorage::disk($this->uploadsDisk)->exists($oldFilePath) && $this->delete($oldFilePath);
     }
 
     # Store the new file if provided
@@ -64,9 +71,9 @@ class Storage
   public function delete(string $filePath): bool
   {
     # Check if the file exists
-    if (!FStorage::disk("public")->exists($filePath)) return false;
+    if (!FStorage::disk($this->uploadsDisk)->exists($filePath)) return false;
 
     # Delete the file
-    return FStorage::disk("public")->delete($filePath);
+    return FStorage::disk($this->uploadsDisk)->delete($filePath);
   }
 }

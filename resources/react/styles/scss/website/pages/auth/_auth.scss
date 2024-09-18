@@ -1,5 +1,5 @@
 .auth-section {
-  @apply h-full bg-white dark:bg-dark py-10 flex flex-col items-center relative z-20;
+  @apply min-h-screen bg-white dark:bg-dark py-10 flex flex-col items-center relative z-20;
 
   .container {
     @apply relative z-20;
@@ -11,11 +11,11 @@
   }
 
   .auth-content-card {
-    @apply lg:max-w-6xl 2xl:max-w-full bg-white/50 shadow-xl w-full drop-shadow-sm h-full rounded-xl grid lg:grid-cols-2;
+    @apply lg:max-w-6xl 2xl:max-w-full bg-white/50 dark:bg-black/50 shadow-xl w-full drop-shadow-sm h-full rounded-xl grid lg:grid-cols-2;
 
     &::after {
       content: '';
-      @apply absolute left-0 top-0 bg-white/70 blur-lg -z-[1] w-full h-full;
+      @apply absolute left-0 top-0 bg-white/70 dark:bg-black/50 blur-lg -z-[1] w-full h-full;
     }
 
     .info-side {

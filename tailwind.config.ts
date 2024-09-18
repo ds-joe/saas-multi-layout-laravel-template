@@ -7,6 +7,7 @@ import shadcnOpacity from './config/tailwind/shadcn/opacity';
 
 // Custom configs
 import customFonts from './config/tailwind/custom/fonts';
+import customShadow from './config/tailwind/custom/shadow';
 
 // Types
 import type { Config } from 'tailwindcss';
@@ -20,7 +21,7 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '1.3rem',
       screens: {
         '2xl': '1400px',
       },
@@ -44,6 +45,9 @@ const config = {
       },
       opacity: {
         ...shadcnOpacity,
+      },
+      boxShadow: {
+        ...customShadow,
       },
     },
   },

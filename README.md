@@ -37,8 +37,8 @@ This template provides a solid foundation for building a SaaS multi layouts appl
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/ds-joe/saas-dashboard-template.git
-cd saas-dashboard-template
+git clone https://github.com/ds-joe/saas-multi-layout-laravel-template.git
+cd saas-multi-layout-laravel-template
 ```
 
 2. **Install backend dependencies:**
@@ -87,4 +87,5 @@ npm run test:ts
 
 - User
   - email: joe@example.com
+  - username: admin
   - password: password

@@ -7,7 +7,7 @@ return [
   'github' => "Github",
   'or_login_normally' => "Or login normally",
   'please_login_to_continue' => "Please login to continue",
-  'email' => "Email",
+  'username_email' => "Email / Username",
   'password' => "Password",
   'remember_me' => "Remember",
   'forgot_your_password' => "Forgot your password?",

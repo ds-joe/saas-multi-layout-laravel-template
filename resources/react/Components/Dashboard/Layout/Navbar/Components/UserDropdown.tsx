@@ -1,5 +1,5 @@
 // Dependencies
-import { usePage, router } from '@inertiajs/react';
+import { usePage, router, Link } from '@inertiajs/react';
 
 // Components
 import {
@@ -25,7 +25,7 @@ const UserDropdown: RC = () => {
 
   // Include 2 characters from user name
   const avatarFallback = ((user: UserModel) =>
-    `${user.name[0]}`.toLocaleUpperCase())(auth.user);
+    `${user.username[0]}`.toLocaleUpperCase())(auth.user);
 
   /**
    * Logout action
@@ -42,26 +42,29 @@ const UserDropdown: RC = () => {
         <div className="flex gap-2 items-center">
           <Avatar>
             <AvatarImage
-              src=""
-              alt={auth.user.name}
+              src={auth.user?.avatar}
+              alt={auth.user?.username}
             />
             <AvatarFallback>{avatarFallback}</AvatarFallback>
           </Avatar>
           <h3 className="flex flex-col items-start max-md:hidden">
-            <p className="text-sm">{auth.user.name}</p>
+            <p className="text-sm">{auth.user.username}</p>
           </h3>
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-40">
-        <DropdownMenuItem className="text-base">
-          {' '}
-          <HiOutlineUser /> {page_words?.profile}
-        </DropdownMenuItem>
+        <Link href={route('user.profile')}>
+          <DropdownMenuItem className="">
+            <HiOutlineUser />
+            {page_words?.profile}
+          </DropdownMenuItem>
+        </Link>
         <DropdownMenuItem
-          className="text-base"
+          className=""
           onClick={logout}
         >
-          <HiArrowLeftOnRectangle /> {page_words?.logout}
+          <HiArrowLeftOnRectangle />
+          {page_words?.logout}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -27,7 +27,7 @@ const Layout: RPL = ({ children, title }) => {
           <Head>
             <title>{title}</title>
           </Head>
-          <main className="flex flex-col h-screen bg-primary-foreground">
+          <main className="flex flex-col min-h-screen bg-primary-foreground">
             {children}
           </main>
         </NotificationProvider>

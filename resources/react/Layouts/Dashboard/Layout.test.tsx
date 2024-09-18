@@ -12,7 +12,8 @@ vi.mock('@inertiajs/react', async (importOriginal) => {
         errors: {},
         auth: {
           user: {
-            name: 'John Doe',
+            username: 'admin',
+            avatar: 'example',
           },
         },
       },

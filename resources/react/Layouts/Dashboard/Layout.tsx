@@ -45,8 +45,8 @@ const Layout: RPL = ({ children, title }) => {
             <Navbar />
             <section className="flex flex-1 overflow-hidden">
               <Sidebar />
-              <div className="flex flex-col overflow-auto flex-1">
-                <div className="container pt-2">{children}</div>
+              <div className="relative flex flex-col overflow-auto flex-1 overflow-x-scroll">
+                <div className="container pt-6">{children}</div>
               </div>
             </section>
           </main>

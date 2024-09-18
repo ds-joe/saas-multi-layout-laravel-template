@@ -20,7 +20,7 @@ import type { ChangeEvent, FormEvent } from 'react';
 const Login: RP = () => {
   const { page_words } = usePage().props as ServerPageProps;
   const { data, setData, processing, post } = useForm({
-    email: '',
+    username: '',
     password: '',
     remember_me: false,
   });
@@ -83,10 +83,10 @@ const Login: RP = () => {
           <FormGroup>
             <FloatInput
               className="w-full"
-              type="email"
-              label={page_words?.email}
-              onChange={(e) => setData('email', e.target.value)}
-              value={data.email}
+              type="text"
+              label={page_words?.username_email}
+              onChange={(e) => setData('username', e.target.value)}
+              value={data.username}
               required
             />
           </FormGroup>
@@ -110,7 +110,6 @@ const Login: RP = () => {
                     (e as ChangeEvent<HTMLInputElement>).target.checked,
                   )
                 }
-                value={data.email}
               />
               <Label
                 className="text-base"
@@ -132,7 +131,8 @@ const Login: RP = () => {
               type="submit"
               disabled={processing}
               size={'lg'}
-              className="w-full"
+              variant={'water'}
+              className="w-full font-semibold"
             >
               {page_words?.continue}
             </Button>
@@ -143,6 +143,11 @@ const Login: RP = () => {
   );
 };
 
-Login.layout = (page) => <Auth children={page} />;
+Login.layout = (page) => (
+  <Auth
+    title={page.props.page_words?.login}
+    children={page}
+  />
+);
 
 export default Login;
