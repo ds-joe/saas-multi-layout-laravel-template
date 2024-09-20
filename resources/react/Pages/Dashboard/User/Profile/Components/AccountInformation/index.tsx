@@ -2,6 +2,8 @@
 import { usePage } from '@inertiajs/react';
 
 // Components
+import LinkedAccountsTab from './LinkedAccountsTab';
+import PersonalInfoTab from './PersonalInfoTab';
 import {
   Card,
   CardContent,
@@ -11,12 +13,11 @@ import {
 } from '@/Components/Global/Shadcn/ui/card';
 import {
   Tabs,
-  TabsContent,
   TabsList,
   TabsTrigger,
 } from '@/Components/Global/Shadcn/ui/tabs';
 
-const Details: RC = () => {
+const AccountInformation: RC = () => {
   const { page_words } = usePage().props as ServerPageProps;
 
   return (
@@ -32,26 +33,21 @@ const Details: RC = () => {
       <CardContent>
         <Tabs
           defaultValue="personal-info"
-          className="w-[400px]"
         >
           <TabsList>
             <TabsTrigger value="personal-info">
               {page_words?.profile_info}
             </TabsTrigger>
-            <TabsTrigger value="linked-account">
+            <TabsTrigger value="linked-account" disabled>
               {page_words?.linked_accounts}
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="personal-info">
-
-          </TabsContent>
-          <TabsContent value="linked-account">
-
-          </TabsContent>
+          <LinkedAccountsTab />
+          <PersonalInfoTab />
         </Tabs>
       </CardContent>
     </Card>
   );
-};
+}
 
-export default Details;
+export default AccountInformation;

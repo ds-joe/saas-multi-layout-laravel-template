@@ -5,6 +5,7 @@ import { cn } from '@/utilities/tailwind/cn';
 // Nested Components
 import FormGroup from './FormGroup';
 import FloatInput from './FloatInput';
+import FormErrors from './FormErrors';
 
 // Types
 import type { FormProps } from '@/types/Components/Global/Custom/Form';
@@ -22,4 +23,4 @@ const Form = forwardRef<HTMLFormElement, FormProps>((props, ref) => {
 });
 
 export default Form;
-export { FormGroup, FloatInput };
+export { FormGroup, FloatInput, FormErrors };

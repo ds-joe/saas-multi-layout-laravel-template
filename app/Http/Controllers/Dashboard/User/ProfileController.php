@@ -93,6 +93,9 @@ class ProfileController extends UserController
         NotificationType::error
       ));
     }
+    $user->meta()->where('key', '_avatar')->update([
+      'value' => null,
+    ]);
 
     return back()->with(Notification::create(
       __('dashboard/pages/user/profile.avatar_removed'),
@@ -129,11 +132,9 @@ class ProfileController extends UserController
         $user->update(['password' => bcrypt($request->password)]);
       }
 
-      $user->meta()->update([
-        '_first_name' => $request->_first_name,
-        '_last_name' => $request->_last_name,
-        '_phone' => $request->_phone,
-      ]);
+      $user->meta()->where('key', '_first_name')->update(['value' => $request->_first_name]);
+      $user->meta()->where('key', '_last_name')->update(['value' => $request->_last_name]);
+      $user->meta()->where('key', '_phone')->update(['value' => $request->_phone]);
     });
 
     return back()->with(Notification::create(

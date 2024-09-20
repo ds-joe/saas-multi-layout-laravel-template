@@ -1,17 +1,35 @@
 @layer components {
   .form {
-    @apply flex flex-col gap-4;
+    @apply flex flex-col gap-4 w-full;
   }
 
   .form-group {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-2 w-full;
+
+    &.double {
+      @apply grid md:grid-cols-2 gap-3;
+    }
+
   }
+
+  .form-errors {
+    @apply grid grid-cols-1 gap-2 bg-danger p-2 rounded-lg text-white;
+
+    .error {
+      @apply flex items-center gap-2 text-sm;
+
+      .icon {
+        @apply h-8 w-8;
+      }
+    }
+  }
+
 
   .float-input {
     @apply relative;
 
     label {
-      @apply absolute left-3 top-2 text-muted-foreground transition-all font-semibold;
+      @apply absolute left-3 top-2 text-muted-foreground transition-all font-normal;
 
       &:has(.icon) {
         @apply flex items-center gap-2;
@@ -24,18 +42,20 @@
       &.error {
         @apply border-[var(--danger)] ring-danger text-danger;
       }
+
     }
 
-    input:focus + label,
-    input:not(:placeholder-shown) + label {
+    input:focus+label,
+    input:not(:placeholder-shown)+label {
       @apply -translate-y-[18px];
+
     }
 
-    input:not(:placeholder-shown) + label {
+    input:not(:placeholder-shown)+label {
       @apply bg-background text-foreground px-1 text-sm;
     }
 
-    input:placeholder-shown + label {
+    input:placeholder-shown+label {
       @apply translate-y-0;
     }
   }

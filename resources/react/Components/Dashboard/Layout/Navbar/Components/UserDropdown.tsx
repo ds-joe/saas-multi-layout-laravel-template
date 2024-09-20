@@ -25,7 +25,7 @@ const UserDropdown: RC = () => {
 
   // Include 2 characters from user name
   const avatarFallback = ((user: UserModel) =>
-    `${user.username[0]}`.toLocaleUpperCase())(auth.user);
+    `${user.username[0]}`.toLocaleUpperCase())(auth.user as UserModel);
 
   /**
    * Logout action
@@ -48,7 +48,7 @@ const UserDropdown: RC = () => {
             <AvatarFallback>{avatarFallback}</AvatarFallback>
           </Avatar>
           <h3 className="flex flex-col items-start max-md:hidden">
-            <p className="text-sm">{auth.user.username}</p>
+            <p className="text-sm">{auth.user?.username}</p>
           </h3>
         </div>
       </DropdownMenuTrigger>

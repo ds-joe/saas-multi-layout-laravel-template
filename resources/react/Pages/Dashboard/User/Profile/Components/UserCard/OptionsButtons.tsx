@@ -1,5 +1,5 @@
 // Dependencies
-import { ChangeEvent, Fragment } from "react";
+import { ChangeEvent } from "react";
 import { usePage, router } from '@inertiajs/react';
 
 // Components
@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  DropdownMenuLabel
 } from '@/Components/Global/Shadcn/ui/dropdown-menu';
 
 // Icons
@@ -18,13 +19,15 @@ import { IoImageOutline } from 'react-icons/io5';
 const OptionsButtons: RC = () => {
   const { page_words, auth } = usePage().props as ServerPageProps;
 
+  console.log(auth.user?.avatar)
+
   /**
    * Handle upload avatar.
    *
    * @param { ChangeEvent<HTMLInputElement> } e
    * @return { void }
    */
-  const uploadAvatar = (e: ChangeEvent<HTMLInputElement>) => {
+  const uploadAvatar = (e: ChangeEvent<HTMLInputElement>): void => {
     const file = e.target.files ? e.target.files[0] : null;
     if (!file) return;
     router.post(route('user.profile.update.avatar'), {
@@ -49,7 +52,7 @@ const OptionsButtons: RC = () => {
   }
 
   return (
-    <Fragment>
+    <div className="flex self-center mt-2 mb-6">
 
       {/** Hidden Inputs */}
       <input
@@ -64,26 +67,31 @@ const OptionsButtons: RC = () => {
       <DropdownMenu>
         <DropdownMenuTrigger>
           <Button
+            className="text-lg rounded-full"
             variant={'water'}
             hasIcon={true}
+            size={'sm'}
           >
             <IoImageOutline />
-            {page_words?.avatar}
           </Button>
         </DropdownMenuTrigger>
+
         <DropdownMenuContent>
+          <DropdownMenuLabel>
+            {page_words?.avatar}
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator />
           <label htmlFor="avatar">
             <DropdownMenuItem>
               {page_words?.upload}
             </DropdownMenuItem>
           </label>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem disabled={auth.user.avatar == null} onClick={handleRemoveAvatar}>
+          <DropdownMenuItem disabled={auth.user?.avatar == null || !auth.user.avatar} onClick={handleRemoveAvatar}>
             {page_words?.remove}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    </Fragment>
+    </div>
   )
 }
 

@@ -3,7 +3,7 @@
 // Components
 import HeroCard from './Components/HeroCard';
 import UserCard from './Components/UserCard';
-import Details from './Components/Details';
+import AccountInformation from './Components/AccountInformation';
 
 // Layout
 import DashboardLayout from '@/Layouts/Dashboard';
@@ -14,7 +14,7 @@ const Profile: RP = () => {
       <HeroCard />
       <div className="grid gap-4 max-lg:grid-cols-1 lg:grid-cols-12">
         <UserCard />
-        <Details />
+        <AccountInformation />
       </div>
     </section>
   );

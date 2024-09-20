@@ -1,9 +1,11 @@
 /// <reference types="vite/client" />
-import { SetupOptions } from '@inertiajs/inertia-react';
+import { SetupOptions } from '@inertiajs/react';
 import { AxiosInstance } from 'axios';
-import React, { ReactNode } from 'react';
+import { Page } from '@inertiajs/core';
+
+import React, { ReactNode, JSX } from 'react';
 import { TypeOptions } from 'react-toastify';
-import { User } from './types/Models/User';
+import { UserModel } from '@/types/Models/User';
 import { route as ziggyRoute } from 'ziggy-js';
 
 declare global {
@@ -18,27 +20,28 @@ declare global {
   /** ***********************************************************************
    * Components & pages
    ************************************************************************ */
-  interface RC<P = {}> extends React.FC<P> {} // react component
+  interface RC<P = {}> extends React.FC<P> { } // react component
   interface RP<P = {}> extends React.FC<P> {
     layout?: (
-      page: SetupOptions<unknown, ServerPageProps>['props']['initialPage'],
+      page: Page<ServerPageProps>,
     ) => JSX.Element;
   } // react page
-  interface RPO<P = {}> extends React.FC<P & { children?: ReactNode }> {} // react provider
+  interface RPO<P = {}> extends React.FC<P & { children?: ReactNode }> { } // react provider
   interface RPL<P = {}>
-    extends React.FC<P & { children?: any; title?: string }> {} // React layout
+    extends React.FC<P & { children?: any; title?: string }> { } // React layout
 
   /** ***********************************************************************
    *  In coming data from sever
    ************************************************************************ */
-  type ServerPageProps<P = {}, D = Record<string, any>> = {
+
+  type ServerPageProps<P = {}> = {
     auth: {
-      user?: User;
+      user?: UserModel;
     };
-    page_words: Record<string, string>;
+    page_words: Record<string, string | undefined>;
     notification?: {
       message: string;
       type: TypeOptions;
     };
-  } & SetupOptions<unknown, P>['props']['initialPage']['props'];
+  } & Page['props'];
 }

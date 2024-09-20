@@ -15,11 +15,16 @@ class InertiaUserResource extends JsonResource
    */
   public function toArray(Request $request): array
   {
-    return [
+    $metaData = collect($this->meta)
+      ->reduce(function ($prev, $meta) {
+        return array_merge($prev, [$meta->key => $meta->value]);
+      }, []);
+
+    return array_merge([
       'username' => $this->username,
       'email' => $this->email,
       'created_at' => $this->created_at,
-      'avatar' => $this->avatar
-    ];
+      'avatar' => $this->avatar,
+    ], $metaData);
   }
 }
