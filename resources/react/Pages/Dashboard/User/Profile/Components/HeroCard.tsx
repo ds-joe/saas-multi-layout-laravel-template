@@ -18,7 +18,7 @@ const HeroCard: RC = () => {
   const { page_words } = usePage().props as ServerPageProps;
 
   return (
-    <Card className="min-h-[200px] relative rounded-xl bg-gradient-to-br from-water to-water/70 shadow">
+    <Card className="min-h-[200px] relative rounded-xl bg-gradient-to-br from-water to-danger/70 shadow">
       <BsStars className="text-7xl text-water-foreground absolute right-4 top-4 opacity-20 md:opacity-50" />
       <CardContent className="p-6 pt-10">
         <div className="flex flex-col gap-2">
