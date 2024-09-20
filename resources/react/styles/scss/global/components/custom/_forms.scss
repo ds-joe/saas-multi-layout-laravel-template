@@ -40,7 +40,7 @@
       @apply placeholder:text-transparent relative;
 
       &.error {
-        @apply border-[var(--danger)] ring-danger text-danger;
+        @apply border-danger ring-danger text-danger;
       }
 
     }

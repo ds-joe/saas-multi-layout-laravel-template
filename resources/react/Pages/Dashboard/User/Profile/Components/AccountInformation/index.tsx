@@ -21,7 +21,7 @@ const AccountInformation: RC = () => {
   const { page_words } = usePage().props as ServerPageProps;
 
   return (
-    <Card className="bg-background lg:col-span-7 min-h-full shadow">
+    <Card className="lg:col-span-7 min-h-full shadow">
       <CardHeader>
         <CardTitle>{page_words?.personal_information}</CardTitle>
         <CardDescription>

@@ -28,20 +28,10 @@ export default {
     DEFAULT: 'var(--popover)',
     foreground: 'var(--popover-foreground)',
   },
-  water: {
-    DEFAULT: 'var(--water)',
-    foreground: 'var(--water-foreground)',
-  },
-  danger: {
-    DEFAULT: 'var(--danger)',
-    foreground: 'var(--danger-foreground)',
-  },
+
   card: {
     DEFAULT: 'var(--card)',
     foreground: 'var(--card-foreground)',
   },
-  dark: {
-    DEFAULT: 'var(--dark)',
-    foreground: 'var(--dark-foreground)',
-  },
+
 };

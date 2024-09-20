@@ -18,14 +18,14 @@ const HeroCard: RC = () => {
   const { page_words } = usePage().props as ServerPageProps;
 
   return (
-    <Card className="min-h-[200px] relative rounded-xl bg-[var(--water)] shadow">
-      <BsStars className="text-7xl text-white absolute right-4 top-4 opacity-20 md:opacity-50" />
+    <Card className="min-h-[200px] relative rounded-xl bg-gradient-to-br from-water to-water/70 shadow">
+      <BsStars className="text-7xl text-water-foreground absolute right-4 top-4 opacity-20 md:opacity-50" />
       <CardContent className="p-6 pt-10">
         <div className="flex flex-col gap-2">
-          <CardTitle className="text-white">
+          <CardTitle className="text-water-foreground">
             {page_words?.explore_your_profile}
           </CardTitle>
-          <CardDescription className="text-sm text-white">
+          <CardDescription className="text-sm text-water-foreground">
             {
               page_words?.track_your_progress_manage_your_settings_and_explore_new_opportunities
             }

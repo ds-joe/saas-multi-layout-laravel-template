@@ -8,6 +8,7 @@ import shadcnOpacity from './config/tailwind/shadcn/opacity';
 // Custom configs
 import customFonts from './config/tailwind/custom/fonts';
 import customShadow from './config/tailwind/custom/shadow';
+import customColors from "./config/tailwind/custom/colors";
 
 // Types
 import type { Config } from 'tailwindcss';
@@ -30,6 +31,7 @@ const config = {
     extend: {
       colors: {
         ...shadcnColors,
+        ...customColors
       },
       fontFamily: {
         ...customFonts,
