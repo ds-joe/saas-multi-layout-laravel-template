@@ -1,8 +1,7 @@
-
 // Components
-import Details from "./Details";
-import Avatar from "./Avatar";
-import OptionsButtons from "./OptionsButtons";
+import Details from './Details';
+import Avatar from './Avatar';
+import OptionsButtons from './OptionsButtons';
 import { Card, CardContent } from '@/Components/Global/Shadcn/ui/card';
 
 const UserCard = () => {

@@ -13,4 +13,3 @@ export interface UserModel extends UserMetaModel {
   updated_at?: string;
   deleted_at?: string;
 }
-

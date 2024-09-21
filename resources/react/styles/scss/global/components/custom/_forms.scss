@@ -9,7 +9,6 @@
     &.double {
       @apply grid md:grid-cols-2 gap-3;
     }
-
   }
 
   .form-errors {
@@ -23,7 +22,6 @@
       }
     }
   }
-
 
   .float-input {
     @apply relative;
@@ -42,20 +40,18 @@
       &.error {
         @apply border-danger ring-danger text-danger;
       }
-
     }
 
-    input:focus+label,
-    input:not(:placeholder-shown)+label {
+    input:focus + label,
+    input:not(:placeholder-shown) + label {
       @apply -translate-y-[18px];
-
     }
 
-    input:not(:placeholder-shown)+label {
+    input:not(:placeholder-shown) + label {
       @apply bg-background text-foreground px-1 text-sm;
     }
 
-    input:placeholder-shown+label {
+    input:placeholder-shown + label {
       @apply translate-y-0;
     }
   }

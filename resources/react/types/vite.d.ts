@@ -20,15 +20,13 @@ declare global {
   /** ***********************************************************************
    * Components & pages
    ************************************************************************ */
-  interface RC<P = {}> extends React.FC<P> { } // react component
+  interface RC<P = {}> extends React.FC<P> {} // react component
   interface RP<P = {}> extends React.FC<P> {
-    layout?: (
-      page: Page<ServerPageProps>,
-    ) => JSX.Element;
+    layout?: (page: Page<ServerPageProps>) => JSX.Element;
   } // react page
-  interface RPO<P = {}> extends React.FC<P & { children?: ReactNode }> { } // react provider
+  interface RPO<P = {}> extends React.FC<P & { children?: ReactNode }> {} // react provider
   interface RPL<P = {}>
-    extends React.FC<P & { children?: any; title?: string }> { } // React layout
+    extends React.FC<P & { children?: any; title?: string }> {} // React layout
 
   /** ***********************************************************************
    *  In coming data from sever

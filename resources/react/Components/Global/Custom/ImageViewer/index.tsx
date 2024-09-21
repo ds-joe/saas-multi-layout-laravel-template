@@ -1,5 +1,5 @@
 // Dependencies
-import { useState, forwardRef } from 'react';
+import { useState, forwardRef, useMemo } from 'react';
 
 // Utils
 import { cn } from '@/utilities/tailwind/cn';
@@ -12,9 +12,10 @@ import type { ImageViewerProps } from '@/types/Components/Global/Custom/ImageVie
 
 const ImageViewer = forwardRef<HTMLSelectElement, ImageViewerProps>(
   (props, ref) => {
-    const [images, _setImages] = useState<Array<string | undefined | null>>(
-      props.images ?? [],
-    );
+    const images = useMemo(() => {
+      return props.images;
+    }, [props.images]);
+
     const [currentIndex, _setCurrentIndex] = useState<number>(
       props.current_index ?? 0,
     );

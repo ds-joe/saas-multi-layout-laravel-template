@@ -33,5 +33,4 @@ export default {
     DEFAULT: 'var(--card)',
     foreground: 'var(--card-foreground)',
   },
-
 };

@@ -1,5 +1,5 @@
 // Types
-import type { Route } from "@/types/Route";
+import type { Route } from '@/types/Route';
 
 const routes: Array<Route> = [
   // Your routes right here.

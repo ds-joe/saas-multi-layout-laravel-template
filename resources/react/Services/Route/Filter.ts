@@ -1,12 +1,10 @@
 // Dependencies
-import Validation from "./Validation";
+import Validation from './Validation';
 
 // Types
-import { Route as RouteObj } from "@/types/Route";
-
+import { Route as RouteObj } from '@/types/Route';
 
 class Filter extends Validation {
-
   /**
    * Application routes ( front-end ).
    *
@@ -26,7 +24,11 @@ class Filter extends Validation {
    * @return { Array<RouteObj> }
    */
   public getRoutesByUserTypes(types: Array<string>): Array<RouteObj> {
-    return this.routes.filter((route) => this.hasAllowedType(route, types) && !this.hasDisallowedType(route, types));
+    return this.routes.filter(
+      (route) =>
+        this.hasAllowedType(route, types) &&
+        !this.hasDisallowedType(route, types),
+    );
   }
 
   /**
@@ -36,7 +38,11 @@ class Filter extends Validation {
    * @return { Array<RouteObj> }
    */
   public getRoutesByPermissions(permissions: Array<string>): Array<RouteObj> {
-    return this.routes.filter((route) => this.hasAllowedPermission(route, permissions) && !this.hasDisallowedPermission(route, permissions));
+    return this.routes.filter(
+      (route) =>
+        this.hasAllowedPermission(route, permissions) &&
+        !this.hasDisallowedPermission(route, permissions),
+    );
   }
 
   /**
@@ -47,8 +53,6 @@ class Filter extends Validation {
   public getCollapsibleRoutes(): Array<RouteObj> {
     return this.routes.filter((route) => this.isCollapsibleRoute(route));
   }
-
-
 }
 
 export default Filter;

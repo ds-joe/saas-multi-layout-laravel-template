@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { usePage } from '@inertiajs/react';
 
 // Components
@@ -9,7 +9,6 @@ import {
   AvatarImage,
 } from '@/Components/Global/Shadcn/ui/avatar';
 
-
 const Avatar = () => {
   const { auth } = usePage().props as ServerPageProps;
   const [avatarViewer, setAvatarViewer] = useState<boolean>(false);
@@ -18,8 +17,12 @@ const Avatar = () => {
   const avatarFallback = ((user) =>
     `${user?.username[0]}${user?.username[1]}`.toLocaleUpperCase())(auth.user);
 
+  const avatar = useMemo(() => {
+    return [auth.user?.avatar];
+  }, [auth.user?.avatar]);
+
   return (
-    <div className='self-center'>
+    <div className="self-center">
       <ShadAvatar
         onClick={() => setAvatarViewer(true)}
         className="h-24 w-24 text-xl border cursor-pointer"
@@ -34,10 +37,10 @@ const Avatar = () => {
         onClose={() => setAvatarViewer(false)}
         visible={avatarViewer}
         current_index={0}
-        images={[auth.user?.avatar]}
+        images={avatar}
       />
     </div>
-  )
-}
+  );
+};
 
 export default Avatar;

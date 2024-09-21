@@ -17,7 +17,12 @@ const FloatInput = forwardRef<HTMLInputElement, FloatInputProps>(
           {...props}
         />
 
-        <label className={cn(props.labelClassName)}>{props.label}</label>
+        <label
+          htmlFor={props.id}
+          className={cn(props.labelClassName)}
+        >
+          {props.label}
+        </label>
       </div>
     );
   },

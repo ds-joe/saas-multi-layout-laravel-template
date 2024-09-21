@@ -31,14 +31,15 @@ const AccountInformation: RC = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Tabs
-          defaultValue="personal-info"
-        >
+        <Tabs defaultValue="personal-info">
           <TabsList>
             <TabsTrigger value="personal-info">
               {page_words?.profile_info}
             </TabsTrigger>
-            <TabsTrigger value="linked-account" disabled>
+            <TabsTrigger
+              value="linked-account"
+              disabled
+            >
               {page_words?.linked_accounts}
             </TabsTrigger>
           </TabsList>
@@ -48,6 +49,6 @@ const AccountInformation: RC = () => {
       </CardContent>
     </Card>
   );
-}
+};
 
 export default AccountInformation;

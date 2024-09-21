@@ -12,7 +12,7 @@ const FormGroup = forwardRef<HTMLDivElement, FormGroupProps>((props, ref) => {
     <div
       {...props}
       ref={ref}
-      className={cn('form-group', isDouble && "double", props.className)}
+      className={cn('form-group', isDouble && 'double', props.className)}
     >
       {props.children}
     </div>

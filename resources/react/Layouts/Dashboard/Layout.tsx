@@ -49,9 +49,7 @@ const Layout: RPL = ({ children, title }) => {
               <div
                 className={`relative flex flex-col overflow-y-auto flex-1 ${layoutSettings.sidebarOpen && 'max-md:overflow-y-hidden'}`}
               >
-                <PageContentCover
-                  visible={`${layoutSettings.sidebarOpen}`}
-                />
+                <PageContentCover visible={`${layoutSettings.sidebarOpen}`} />
                 <div className="container py-6">{children}</div>
               </div>
             </section>
