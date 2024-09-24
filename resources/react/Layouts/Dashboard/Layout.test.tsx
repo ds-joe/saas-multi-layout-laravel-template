@@ -16,6 +16,7 @@ vi.mock('@inertiajs/react', async (importOriginal) => {
             avatar: 'example',
           },
         },
+        page_words: {}
       },
     }),
     Head: () => null,

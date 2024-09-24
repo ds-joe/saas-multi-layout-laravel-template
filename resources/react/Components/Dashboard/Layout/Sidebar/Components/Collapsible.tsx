@@ -63,7 +63,7 @@ const CollapsibleItem = forwardRef<HTMLLIElement, CollapsibleItemProps>(
       <li
         {...props}
         className={cn(
-          itemClasses(`text-sm ${active ? "bg-water text-white" : ""}`),
+          itemClasses(`text-sm ${active ? "bg-water text-white  hover:text-foreground" : ""}`),
           props.className,
           !childItem ? 'text-[0.95rem]' : '',
         )}
