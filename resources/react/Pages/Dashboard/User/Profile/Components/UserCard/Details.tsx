@@ -25,10 +25,14 @@ const Details: RC = () => {
           <MdAlternateEmail className="text-lg" />
           {auth.user?.email}
         </h4>
-        <h4 className="flex items-center gap-3 ">
-          <FaPhone className="text-lg" />
-          {auth.user?._phone}
-        </h4>
+        {
+          auth.user?._phone && (
+            <h4 className="flex items-center gap-3 ">
+              <FaPhone className="text-lg" />
+              {auth.user?._phone}
+            </h4>
+          )
+        }
       </div>
     </Fragment>
   );

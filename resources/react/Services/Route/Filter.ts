@@ -12,8 +12,8 @@ class Filter extends Validation {
    */
   protected routes: Array<RouteObj> = [];
 
-  constructor(routes: Array<RouteObj>) {
-    super();
+  constructor(routes: Array<RouteObj>, permissions: Array<string>) {
+    super(permissions);
     this.routes = routes;
   }
 
@@ -34,14 +34,13 @@ class Filter extends Validation {
   /**
    * Get routes depending on user permissions.
    *
-   * @param { Array<string> } permissions
    * @return { Array<RouteObj> }
    */
-  public getRoutesByPermissions(permissions: Array<string>): Array<RouteObj> {
+  public getRoutesByPermissions(): Array<RouteObj> {
     return this.routes.filter(
       (route) =>
-        this.hasAllowedPermission(route, permissions) &&
-        !this.hasDisallowedPermission(route, permissions),
+        this.hasAllowedPermission(route) &&
+        !this.hasDisallowedPermission(route),
     );
   }
 

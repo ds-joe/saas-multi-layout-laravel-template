@@ -33,16 +33,21 @@ import type { IconType } from 'react-icons';
  * @field disallowed_permissions
  *    - If user contain on of those permissions can not enter route.
  *    - Keep it empty if allowed for all users.
+ *
+* @field isChild
+ *    - This prop using just to add some padding to route if child.
  */
 
 export interface Route {
+  id: number;
   translated_word?: string;
   Icon?: IconType;
   route?: string;
   is_collapsible?: boolean;
-  child_routes: Array<Route>;
+  child_routes?: Array<Route>;
   allowed_user_types: Array<string>;
   disallowed_user_types: Array<string>;
   allowed_permissions: Array<string>;
   disallowed_permissions: Array<string>;
+  isChild?: boolean;
 }
