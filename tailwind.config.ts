@@ -10,14 +10,18 @@ import customFonts from './config/tailwind/custom/fonts';
 import customShadow from './config/tailwind/custom/shadow';
 import customColors from './config/tailwind/custom/colors';
 
+import withMT from "@material-tailwind/react/utils/withMT";
+
 // Types
 import type { Config } from 'tailwindcss';
 
-const config = {
+const config = withMT({
   darkMode: 'class',
   content: [
     './resources/**/*.{ts,tsx,blade.php,scss}',
     './storage/framework/views/**/*.{css,php,html}',
+    './node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     container: {
@@ -54,6 +58,6 @@ const config = {
     },
   },
   plugins: [require('tailwindcss-animate')],
-} satisfies Config;
+}) as Config;
 
 export default config;

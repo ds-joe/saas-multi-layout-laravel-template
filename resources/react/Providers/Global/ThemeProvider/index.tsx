@@ -1,11 +1,11 @@
-// Dependencies
-import { Fragment } from 'react';
+// Providers
+import MaterialUiProvider from '../MaterialUiProvider';
 
 // Global Assets
 import '@/styles/style.scss';
 
 const ThemeProvider: RPO = ({ children }) => {
-  return <Fragment>{children}</Fragment>;
+  return <MaterialUiProvider>{children}</MaterialUiProvider>;
 };
 
 export default ThemeProvider;
