@@ -1,4 +1,4 @@
 export default {
-  title: 'font-medium',
-  description: 'font-medium',
+  title: 'text-[16px] font-bold',
+  description: 'font-medium text-[14px]',
 };
