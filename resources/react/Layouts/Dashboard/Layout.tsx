@@ -4,6 +4,7 @@ import { usePage } from '@inertiajs/react';
 
 // Hooks
 import useNotification from '@/hooks/useNotification';
+import useTheme from '@/hooks/useTheme';
 
 // Providers
 import ThemeProvider from '@/Providers/Dashboard/ThemeProvider';
@@ -15,12 +16,12 @@ import { DashboardRootState } from '@/redux/store';
 
 // Components
 import { Head } from '@inertiajs/react';
-import Sidebar from '@/Components/Dashboard/Layout/Sidebar';
 import Navbar from '@/Components/Dashboard/Layout/Navbar';
-import PageContentCover from '@/Components/Dashboard/Layout/PageContentConver';
+import Sidebar from '@/Components/Dashboard/Layout/Sidebar';
 
 const Layout: RPL = ({ children, title }) => {
   const toast = useNotification();
+  const { dashboard } = useTheme();
   const { notification } = usePage().props as ServerPageProps;
   const layoutSettings = useSelector(
     (state: DashboardRootState) => state.dashboard.layout,
@@ -42,17 +43,12 @@ const Layout: RPL = ({ children, title }) => {
             theme: layoutSettings.darkMode ? 'dark' : 'light',
           }}
         >
-          <main className="flex flex-col h-screen bg-primary-foreground  ">
+          <main className={dashboard.layout.main}>
             <Navbar />
-            <section className="flex flex-1 overflow-hidden relative">
+            <div className={dashboard.layout.content_area}>
               <Sidebar />
-              <div
-                className={`relative flex flex-col overflow-y-auto flex-1 ${layoutSettings.sidebarOpen && 'max-md:overflow-y-hidden'}`}
-              >
-                <PageContentCover visible={`${layoutSettings.sidebarOpen}`} />
-                <div className="container py-6">{children}</div>
-              </div>
-            </section>
+              <div className={dashboard.layout.page_content}>{children}</div>
+            </div>
           </main>
         </NotificationProvider>
       </ThemeProvider>

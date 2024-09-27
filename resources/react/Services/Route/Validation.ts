@@ -2,7 +2,6 @@
 import { Route as RouteObj } from '@/types/Route';
 
 class Validation {
-
   protected permissions: Array<string> = [];
 
   constructor(permissions: Array<string>) {
@@ -39,9 +38,7 @@ class Validation {
    * @param { RouteObj } route
    * @return { boolean }
    */
-  public hasDisallowedPermission(
-    route: RouteObj
-  ): boolean {
+  public hasDisallowedPermission(route: RouteObj): boolean {
     return route.disallowed_permissions.some((permission) =>
       this.permissions.includes(permission),
     );
@@ -54,9 +51,7 @@ class Validation {
    * @param { Array<string> } permissions
    * @return { boolean }
    */
-  public hasAllowedPermission(
-    route: RouteObj
-  ): boolean {
+  public hasAllowedPermission(route: RouteObj): boolean {
     return (
       route.allowed_permissions.length == 0 ||
       route.allowed_permissions.some((permission) =>

@@ -1,45 +1,28 @@
-// Redux
-import { useDispatch } from 'react-redux';
-import { toggleSidebarOpen } from '@/redux/dashboard/slicers/layout';
+// Hooks
+import useTheme from '@/hooks/useTheme';
 
 // Components
-import { Button } from '@/Components/Global/Shadcn/ui/button';
+import AdditionButtons from './Components/AdditionButtons';
 import UserDropdown from './Components/UserDropdown';
-import AdditionButtons from './Components/AddtionButtons';
-
-// Icons
-import { HiBars3 } from 'react-icons/hi2';
 
 // Assets
-import LogoSide from './Components/LogoSide';
+import logo from '~/images/global/logo2.png';
 
 const Navbar: RC = () => {
-  const dispatch = useDispatch();
-
-  /**
-   * Handle toggle sidebar open.
-   *
-   * @return { void }
-   */
-  const toggleSidebar = (): void => {
-    dispatch(toggleSidebarOpen());
-  };
+  const theme = useTheme();
+  const navbarTheme = theme.dashboard.components.navbar;
 
   return (
-    <nav className="w-full  py-3 bg-background dark:bg-dark border-b border-b/5 z-[11] shadow">
-      <div className="container flex items-center justify-between gap-6">
-        <LogoSide />
-        <div className="flex items-center gap-2">
-          <AdditionButtons />
-          <UserDropdown />
-          <Button
-            variant={'ghost'}
-            size={'icon'}
-            onClick={toggleSidebar}
-          >
-            <HiBars3 className="text-xl" />
-          </Button>
-        </div>
+    <nav className={navbarTheme.base}>
+      <div className={navbarTheme.logo_side.base}>
+        <img
+          className={navbarTheme.logo_side.logo}
+          src={logo}
+        />
+      </div>
+      <div className={navbarTheme.buttons_side.base}>
+        <AdditionButtons />
+        <UserDropdown />
       </div>
     </nav>
   );

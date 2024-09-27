@@ -1,6 +1,9 @@
 // Dependencies
 import { forwardRef } from 'react';
 
+// Hooks
+import useTheme from '@/hooks/useTheme';
+
 // Utils
 import { cn } from '@/utilities/tailwind/cn';
 
@@ -13,20 +16,22 @@ import { FiAlertTriangle } from 'react-icons/fi';
 const FormErrors = forwardRef<HTMLDivElement, FormErrorsProps>(
   function (props, ref) {
     const errors = Object.values(props.errors ?? {});
+    const theme = useTheme();
+    const formTheme = theme.global.components.form;
 
     return (
       errors.length > 0 && (
         <div
           ref={ref}
           {...props}
-          className={cn('form-errors', props.className)}
+          className={cn(formTheme.form_errors.base, props.className)}
         >
           {errors.map((error, index) => (
             <p
               key={`${error} + ${index * Math.random()}`}
-              className="error"
+              className={formTheme.form_errors.error.base}
             >
-              <FiAlertTriangle className="icon" />
+              <FiAlertTriangle className={formTheme.form_errors.error.icon} />
               {error}
             </p>
           ))}

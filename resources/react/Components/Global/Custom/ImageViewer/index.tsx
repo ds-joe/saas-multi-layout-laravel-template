@@ -1,6 +1,9 @@
 // Dependencies
 import { useState, forwardRef, useMemo } from 'react';
 
+// Hooks
+import useTheme from '@/hooks/useTheme';
+
 // Utils
 import { cn } from '@/utilities/tailwind/cn';
 
@@ -12,6 +15,8 @@ import type { ImageViewerProps } from '@/types/Components/Global/Custom/ImageVie
 
 const ImageViewer = forwardRef<HTMLSelectElement, ImageViewerProps>(
   (props, ref) => {
+    const theme = useTheme();
+    const imageViewerTheme = theme.global.components.image_viewer;
     const images = useMemo(() => {
       return props.images;
     }, [props.images]);
@@ -25,24 +30,22 @@ const ImageViewer = forwardRef<HTMLSelectElement, ImageViewerProps>(
         {...props}
         ref={ref}
         className={cn(
-          'transition-all duration-500 w-screen min-h-screen fixed top-0 left-0 bg-white/60 dark:bg-black/60 backdrop-blur z-50',
-          props.visible
-            ? 'flex flex-col scale-100 items-center justify-center '
-            : 'hidden scale-0',
+          imageViewerTheme.base,
+          props.visible ? imageViewerTheme.visible : imageViewerTheme.hidden,
           props.className,
         )}
         onClick={props.onClose}
       >
-        <div className="container h-full flex flex-col items-center justify-center">
+        <div className={imageViewerTheme.content.base}>
           <img
             src={images[currentIndex] ?? ''}
             alt="Image"
-            className="h-full object-cover max-w-2xl"
+            className={imageViewerTheme.content.image}
           />
         </div>
         <HiXMark
           onClick={props.onClose}
-          className="absolute top-5 right-5 text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white text-4xl cursor-pointer"
+          className={imageViewerTheme.content.btn_close}
         />
       </section>
     );

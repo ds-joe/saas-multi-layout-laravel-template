@@ -1,5 +1,11 @@
+// Dependencies
 import { combineReducers } from '@reduxjs/toolkit';
 
-const globalReducers = combineReducers({});
+// Reducers
+import themeReducer from './slicers/theme';
+
+const globalReducers = combineReducers({
+  themeReducer,
+});
 
 export default globalReducers;

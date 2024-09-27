@@ -1,29 +1,29 @@
 // Dependencies
 import { forwardRef } from 'react';
+
+// Hooks
+import useTheme from '@/hooks/useTheme';
+
+// Components
+import { Input } from '@material-tailwind/react';
+
+// Utils
 import { cn } from '@/utilities/tailwind/cn';
 
 // Types
 import type { FloatInputProps } from '@/types/Components/Global/Custom/Form';
-import { Input } from '../../Shadcn/ui/input';
 
 const FloatInput = forwardRef<HTMLInputElement, FloatInputProps>(
   (props, ref) => {
-    return (
-      <div className={cn(`float-input`, props.divClassName)}>
-        <Input
-          className={cn(`${props.error && 'error'}`, props.className)}
-          ref={ref}
-          placeholder=" "
-          {...props}
-        />
+    const theme = useTheme();
+    const formTheme = theme.global.components.form;
 
-        <label
-          htmlFor={props.id}
-          className={cn(props.labelClassName)}
-        >
-          {props.label}
-        </label>
-      </div>
+    return (
+      <Input
+        {...(props as any)}
+        className={cn(formTheme.float_input.base, props.className)}
+        inputRef={ref}
+      />
     );
   },
 );

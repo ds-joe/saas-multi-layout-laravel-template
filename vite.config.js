@@ -1,6 +1,11 @@
+// Dependencies
 import { defineConfig } from 'vite';
+
+// Plugins
 import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
+
+// Utils
 import path from 'path';
 
 export default defineConfig({
@@ -14,7 +19,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './resources/react/bootstrap/testingSetup.ts',
+    setupFiles: [
+      './resources/react/bootstrap/testingSetup.ts',
+      "./resources/react/testing/vitest.setup.ts"
+    ],
   },
   server: {
     watch: {

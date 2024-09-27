@@ -4,12 +4,12 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 // Reducers
 import dashboardReducers from './dashboard';
 // import websiteReducers from './website'
-// import globalReducers from './global';
+import globalReducers from './global';
 
 export const dashboardStore = configureStore({
   reducer: combineReducers({
     dashboard: dashboardReducers,
-    // global: globalReducers,
+    global: globalReducers,
   }),
 });
 

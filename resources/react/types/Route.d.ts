@@ -6,7 +6,7 @@ import type { IconType } from 'react-icons';
  * @field translated_word
  *    - The translated key from backend.
  *
- * @field Icon
+ * @field icon
  *    - The Icon from react-icons library.
  *
  * @field route
@@ -34,14 +34,12 @@ import type { IconType } from 'react-icons';
  *    - If user contain on of those permissions can not enter route.
  *    - Keep it empty if allowed for all users.
  *
-* @field isChild
- *    - This prop using just to add some padding to route if child.
  */
 
 export interface Route {
   id: number;
   translated_word?: string;
-  Icon?: IconType;
+  icon?: IconType;
   route?: string;
   is_collapsible?: boolean;
   child_routes?: Array<Route>;
@@ -49,5 +47,4 @@ export interface Route {
   disallowed_user_types: Array<string>;
   allowed_permissions: Array<string>;
   disallowed_permissions: Array<string>;
-  isChild?: boolean;
 }

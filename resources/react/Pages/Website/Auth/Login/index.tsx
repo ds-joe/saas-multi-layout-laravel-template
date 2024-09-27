@@ -5,11 +5,14 @@ import { usePage, useForm } from '@inertiajs/react';
 import Auth from '@/Layouts/Website/Auth';
 
 // Components
-import { Card } from '@/Components/Global/Shadcn/ui/card';
-import { Button } from '@/Components/Global/Shadcn/ui/button';
-import { Checkbox } from '@/Components/Global/Shadcn/ui/checkbox';
+import {
+  Card,
+  CardTitle,
+  CardDescription,
+} from '@/Components/Global/Custom/Card';
 import Form, { FloatInput, FormGroup } from '@/Components/Global/Custom/Form';
-import { Label } from '@/Components/Global/Shadcn/ui/label';
+import Checkbox from '@/Components/Global/Custom/Checkbox';
+import Button from '@/Components/Global/Custom/Button';
 
 // Icons
 import { FaGoogle, FaFacebook, FaGithub } from 'react-icons/fa6';
@@ -43,12 +46,12 @@ const Login: RP = () => {
         <p className="info-text">{page_words?.please_login_to_continue}</p>
       </div>
       <div className="form-side">
-        <h1 className="form-title">{page_words?.login}</h1>
+        <CardTitle className="form-title">{page_words?.login}</CardTitle>
 
         <div className="mt-10 sm:grid sm:grid-cols-1 md:flex items-center gap-3 justify-center">
           <Button
             disabled
-            variant={'danger'}
+            color={'red'}
             className="flex items-center gap-2 font-bold w-full md:w-fit "
           >
             <FaGoogle />
@@ -56,7 +59,7 @@ const Login: RP = () => {
           </Button>
           <Button
             disabled
-            variant={'water'}
+            color={'blue'}
             className="flex items-center gap-2 mt-3 w-full md:w-fit md:mt-0 font-bold"
           >
             <FaFacebook />
@@ -70,10 +73,10 @@ const Login: RP = () => {
             {page_words?.github}
           </Button>
         </div>
-        <div className="flex items-center gap-5 mt-10 justify-center">
-          <span className="w-9 h-[1px] bg-foreground inline-block"></span>
-          <span>{page_words?.or_login_normally}</span>
-          <span className="w-9 h-[1px] bg-foreground inline-block"></span>
+        <div className="flex items-center gap-5 mt-10 justify-center ">
+          <span className="w-9 h-[1px] bg-gray-600 inline-block"></span>
+          <CardDescription>{page_words?.or_login_normally}</CardDescription>
+          <span className="w-9 h-[1px] bg-gray-600 inline-block"></span>
         </div>
 
         <Form
@@ -100,10 +103,10 @@ const Login: RP = () => {
               required
             />
           </FormGroup>
-          <div className="my-3 flex items-center justify-between">
+          <div className="mb-3 flex items-center justify-between">
             <FormGroup className="flex items-center flex-row  gap-2">
               <Checkbox
-                id="remember_me"
+                label={page_words?.remember_me}
                 onChange={(e) =>
                   setData(
                     'remember_me',
@@ -111,17 +114,12 @@ const Login: RP = () => {
                   )
                 }
               />
-              <Label
-                className="text-base"
-                htmlFor="remember_me"
-              >
-                {page_words?.remember_me}
-              </Label>
             </FormGroup>
             <Button
               disabled
               type="button"
-              variant={'link'}
+              variant={'text'}
+              className="whitespace-nowrap font-medium capitalize"
             >
               {page_words?.forgot_your_password}
             </Button>
@@ -129,9 +127,9 @@ const Login: RP = () => {
           <FormGroup>
             <Button
               type="submit"
+              color={'blue'}
               disabled={processing}
               size={'lg'}
-              variant={'water'}
               className="w-full font-semibold"
             >
               {page_words?.continue}

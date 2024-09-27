@@ -4,16 +4,12 @@ import type { IconType } from 'react-icons';
 interface CollapsibleProps extends InputHTMLAttributes<HTMLDivElement> {
   title: string;
   children?: ReactNode;
-  isOpenInitially?: boolean;
-  Icon?: IconType;
-  fold?: boolean;
+  open?: boolean;
 }
 
 interface CollapsibleItemProps extends InputHTMLAttributes<HTMLLIElement> {
   children?: ReactNode;
-  active?: boolean;
-  Icon?: IconType;
+  active?: boolean | string;
+  icon?: IconType;
   href?: string;
-  childItem?: boolean;
-  fold?: boolean;
 }

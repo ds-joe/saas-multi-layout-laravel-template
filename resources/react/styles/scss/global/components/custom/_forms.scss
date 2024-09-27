@@ -12,7 +12,7 @@
   }
 
   .form-errors {
-    @apply grid grid-cols-1 gap-2 bg-danger p-2 rounded-lg text-white;
+    @apply grid grid-cols-1 gap-2 bg-red-700 p-2 rounded-lg text-white;
 
     .error {
       @apply flex items-center gap-2 text-sm;
@@ -20,39 +20,6 @@
       .icon {
         @apply h-8 w-8;
       }
-    }
-  }
-
-  .float-input {
-    @apply relative;
-
-    label {
-      @apply absolute left-3 top-2 text-muted-foreground transition-all font-normal;
-
-      &:has(.icon) {
-        @apply flex items-center gap-2;
-      }
-    }
-
-    input {
-      @apply placeholder:text-transparent relative;
-
-      &.error {
-        @apply border-danger ring-danger text-danger;
-      }
-    }
-
-    input:focus + label,
-    input:not(:placeholder-shown) + label {
-      @apply -translate-y-[18px];
-    }
-
-    input:not(:placeholder-shown) + label {
-      @apply bg-background text-foreground px-1 text-sm;
-    }
-
-    input:placeholder-shown + label {
-      @apply translate-y-0;
     }
   }
 }

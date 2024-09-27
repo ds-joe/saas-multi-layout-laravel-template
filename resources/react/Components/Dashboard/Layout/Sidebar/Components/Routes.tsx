@@ -1,30 +1,30 @@
 // Dependencies
 import { usePage } from '@inertiajs/react';
 
+// Components
+import CollapseRoute from './Route';
+import Collapse from './Collapse';
+
 // Services
 import RouteService from '@/Services/Route';
 
-// UI Routes
-import uiRoutes from '@/routes';
-
-// Components
-import Collapsible, { CollapsibleItem } from './Collapsible';
+// Routes
+import routes from '@/routes';
 
 // Types
 import type { Route as RouteType } from '@/types/Route';
 
-// Initialize Route Service
-const routeService = new RouteService(uiRoutes, []);
-
-// Route Component
 const Route: RC<RouteType> = (routeProps) => {
   const { page_words } = usePage().props as ServerPageProps;
-
-  const { Icon, translated_word, child_routes, route: routeName, isChild } = routeProps;
-  const routeLabel = page_words[translated_word ?? ""] ?? "";
+  const routeService = new RouteService(routes, []);
+  const { icon, translated_word, child_routes, route: routeName } = routeProps;
+  const routeLabel = page_words[translated_word ?? ''] ?? '';
 
   // Permission checks
-  if (!routeService.hasAllowedPermission(routeProps) || routeService.hasDisallowedPermission(routeProps)) {
+  if (
+    !routeService.hasAllowedPermission(routeProps) ||
+    routeService.hasDisallowedPermission(routeProps)
+  ) {
     return null;
   }
 
@@ -32,37 +32,41 @@ const Route: RC<RouteType> = (routeProps) => {
   if (routeService.isCollapsibleRoute(routeProps)) {
     return (
       <li>
-        <Collapsible title={routeLabel} Icon={Icon}>
+        <Collapse title={routeLabel}>
           {child_routes?.map((childRoute) => (
-            <Route {...childRoute} key={childRoute.id} isChild />
+            <Route
+              {...childRoute}
+              key={childRoute.id}
+            />
           ))}
-        </Collapsible>
+        </Collapse>
       </li>
     );
   }
 
   return (
-    <CollapsibleItem
-      childItem={isChild}
-      Icon={Icon}
+    <CollapseRoute
+      icon={icon}
       href={routeName ? route(routeName) : undefined}
-      active={routeService.isActiveLink(routeName ? route(routeName) : "")}
+      {...(routeService.isActiveLink(routeName ? route(routeName) : '')
+        ? { active: 'true' }
+        : {})}
     >
       {routeLabel}
-    </CollapsibleItem>
+    </CollapseRoute>
   );
 };
 
-// SidebarRoutes Component
 const SidebarRoutes: RC = () => {
-  const routes = routeService.getRoutes();
-
   return (
-    <ul className="flex flex-col overflow-y-auto gap-1">
+    <>
       {routes.map((route) => (
-        <Route {...route} key={route.id} />
+        <Route
+          {...route}
+          key={route.id}
+        />
       ))}
-    </ul>
+    </>
   );
 };
 
