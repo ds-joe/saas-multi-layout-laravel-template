@@ -2,12 +2,10 @@
 import { screen, render } from '@testing-library/react';
 import { it } from 'node:test';
 
-
 // Components
 import Form, { FloatInput, FormErrors, FormGroup } from './index';
 
 test('Custom Form', function () {
-
   it.skip('Render Float Input', function () {
     render(
       <FloatInput

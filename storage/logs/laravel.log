@@ -8508,3 +8508,12 @@ Stack trace:
 #67 /home/joe/Workspace/default/saas-multi-layout-laravel-template/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('...')
 #68 {main}
 "} 
+[2024-09-28 09:20:46] local.ERROR: Command "seer" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"seer\" is not defined. at /home/joe/Workspace/default/saas-multi-layout-laravel-template/vendor/symfony/console/Application.php:702)
+[stacktrace]
+#0 /home/joe/Workspace/default/saas-multi-layout-laravel-template/vendor/symfony/console/Application.php(258): Symfony\\Component\\Console\\Application->find()
+#1 /home/joe/Workspace/default/saas-multi-layout-laravel-template/vendor/symfony/console/Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#2 /home/joe/Workspace/default/saas-multi-layout-laravel-template/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(197): Symfony\\Component\\Console\\Application->run()
+#3 /home/joe/Workspace/default/saas-multi-layout-laravel-template/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1203): Illuminate\\Foundation\\Console\\Kernel->handle()
+#4 /home/joe/Workspace/default/saas-multi-layout-laravel-template/artisan(13): Illuminate\\Foundation\\Application->handleCommand()
+#5 {main}
+"} 

@@ -16,11 +16,12 @@ This template provides a solid foundation for building a SaaS multi layouts appl
 - **[Jest](https://jestjs.io/)**: Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 - **[Tailwind CSS](https://tailwindcss.com/docs)**: Utility-first CSS framework for rapid UI development.
 - **[Sass](https://sass-lang.com/)**: the most mature, stable, and powerful professional grade CSS extension language in the world.
-- **[Shadcn](https://ui.shadcn.com/docs)**: A Lightweight CSS-in-JS Library.
+- **[material-tailwind](https://www.material-tailwind.com/)**: Material Tailwind is a free and open-source components library for ReactJS and Tailwind CSS inspired by Material Design.
 - **[Laravel Modules](https://laravelmodules.com)**: is a Laravel package which was created to manage your large Laravel app using modules.
 - **[Spatie Permissions](https://spatie.be/docs/laravel-permission/v6/introduction)**: is a Laravel package which was created to manage user permissions and roles.
 - **[react-icons](https://react-icons.github.io/react-icons/)**: which utilizes ES6 imports that allows you to include only the icons that your project is using.
 - **[prettier](https://prettier.io/)**: Prettier is an opinionated code formatter.
+- **[ApexCharts](https://apexcharts.com/)**: ApexCharts is a modern charting library that helps developers to create beautiful and interactive visualizations for web pages.formatter.
 
 ## Getting Started
 

@@ -9,7 +9,7 @@ test('Image Viewer visible', function () {
     <ImageViewer
       images={['https://via.placeholder.com/150']}
       current_index={0}
-      onClose={() => { }}
+      onClose={() => {}}
       visible={'true'}
       data-testid="image-viewer"
     />,
@@ -25,7 +25,7 @@ test('Image Viewer hidden', function () {
     <ImageViewer
       images={['https://via.placeholder.com/150']}
       current_index={0}
-      onClose={() => { }}
+      onClose={() => {}}
       data-testid="image-viewer"
     />,
   );

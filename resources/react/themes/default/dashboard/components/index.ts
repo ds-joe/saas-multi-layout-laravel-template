@@ -11,7 +11,7 @@ import state_card from './utils/state_card';
 export default {
   modules,
   utils: {
-    state_card
+    state_card,
   },
   navbar,
   sidebar,

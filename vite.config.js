@@ -21,7 +21,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: [
       './resources/react/bootstrap/testingSetup.ts',
-      "./resources/react/testing/vitest.setup.ts"
+      './resources/react/testing/vitest.setup.ts',
     ],
   },
   server: {

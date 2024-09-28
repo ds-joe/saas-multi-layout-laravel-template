@@ -19,11 +19,9 @@ vi.mock('@inertiajs/react', async (importOriginal) => {
         page_words: {},
       },
     }),
-    Head: () => null
+    Head: () => null,
   };
-
 });
-
 
 describe.skip('Dashboard Layout', function () {
   // Check if render correctly
