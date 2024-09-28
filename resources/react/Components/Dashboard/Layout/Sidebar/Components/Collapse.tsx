@@ -18,34 +18,45 @@ import { FiChevronDown } from 'react-icons/fi';
 import type { CollapsibleProps } from '@/types/Components/Dashboard/Layout/Sidebar';
 
 const Collapse: RC<CollapsibleProps> = (props) => {
-  const theme = useTheme();
-  const collapseTheme = theme.dashboard.components.sidebar.collapse;
+  const theme = useTheme().dashboard.components.layout.sidebar.collapse;
   const [collapseOpen, setCollapseOpen] = useState<boolean>(
     props.open ?? false,
   );
 
   return (
-    <div className={collapseTheme.base}>
+    <div className={theme.base}>
       <Typography
         as="label"
         variant="label"
         {...props}
-        className={cn(collapseTheme.label, props.className)}
+        className={cn(theme.label, props.className)}
         onClick={() => setCollapseOpen(!collapseOpen)}
       >
         <span>{props.title}</span>
         <FiChevronDown
           className={cn(
-            collapseTheme.icon.base,
-            collapseOpen ? collapseTheme.icon.open : '',
+            theme.icon.base,
+            collapseOpen ? theme.icon.open : '',
           )}
         />
       </Typography>
       <MCollapse open={collapseOpen}>
-        <div className={collapseTheme.content}>{props.children}</div>
+        <div className={theme.content}>{props.children}</div>
       </MCollapse>
     </div>
   );
 };
+
+export const CollapseLabel: RC<{ title?: string }> = ({ title }) => {
+  const theme = useTheme().dashboard.components.layout.sidebar.collapse;
+
+  return (
+    <Typography
+      as="label"
+      variant="label"
+      className={cn(theme.label, theme.base)}
+    >{title}</Typography>
+  )
+}
 
 export default Collapse;

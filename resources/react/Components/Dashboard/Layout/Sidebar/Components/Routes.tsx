@@ -3,7 +3,7 @@ import { usePage } from '@inertiajs/react';
 
 // Components
 import CollapseRoute from './Route';
-import Collapse from './Collapse';
+import Collapse, { CollapseLabel } from './Collapse';
 
 // Services
 import RouteService from '@/Services/Route';
@@ -27,6 +27,14 @@ const Route: RC<RouteType> = (routeProps) => {
   ) {
     return null;
   }
+
+  // Render label if applicable
+  if (routeProps.is_label) {
+    return (
+      <CollapseLabel title={routeLabel} />
+    )
+  }
+
 
   // Render collapsible route if applicable
   if (routeService.isCollapsibleRoute(routeProps)) {

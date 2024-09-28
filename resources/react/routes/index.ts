@@ -50,7 +50,16 @@ const routes: Array<Route> = [
   },
   {
     id: 5,
-    translated_word: 'profile',
+    translated_word: 'settings',
+    is_label: true,
+    allowed_user_types: [],
+    disallowed_user_types: [],
+    allowed_permissions: [],
+    disallowed_permissions: [],
+  },
+  {
+    id: 6,
+    translated_word: 'personal_settings',
     icon: HiOutlineUser,
     route: 'user.profile',
     allowed_user_types: [],

@@ -34,6 +34,8 @@ import type { IconType } from 'react-icons';
  *    - If user contain on of those permissions can not enter route.
  *    - Keep it empty if allowed for all users.
  *
+ * @field is_label
+ *    - But collapse label.
  */
 
 export interface Route {
@@ -47,4 +49,5 @@ export interface Route {
   disallowed_user_types: Array<string>;
   allowed_permissions: Array<string>;
   disallowed_permissions: Array<string>;
+  is_label?: boolean;
 }

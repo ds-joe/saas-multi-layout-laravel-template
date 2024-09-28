@@ -1,6 +1,9 @@
 // Dependencies
 import { forwardRef } from 'react';
 
+// Hooks
+import useTheme from '@/hooks/useTheme';
+
 // Utils
 import { cn } from '@/utilities/tailwind/cn';
 
@@ -10,16 +13,18 @@ import type { PageContentCoverProps } from '@/types/Components/Dashboard/Layout/
 const PageContentCover = forwardRef<HTMLDivElement, PageContentCoverProps>(
   (props, ref) => {
     const visible = props.visible == 'false' || !props.visible ? false : true;
+    const theme = useTheme().dashboard.components.layout.page_content_cover;
 
     return (
       <div
         {...props}
         ref={ref}
         className={cn(
-          `w-screen h-screen fixed top-0 left-0 bg-background z-[9] lg:hidden ${visible ? 'inline-block' : 'hidden'}`,
-          props.className,
+          theme.backdrop.base,
+          visible ? theme.backdrop.visible : theme.backdrop.hidden,
+          props.className
         )}
-      ></div>
+      />
     );
   },
 );

@@ -26,7 +26,7 @@ import { FaBarsStaggered } from 'react-icons/fa6';
 const UserDropdown: RC = () => {
   const theme = useTheme();
   const userDropdownTheme =
-    theme.dashboard.components.navbar.buttons_side.user_dropdown;
+    theme.dashboard.components.layout.navbar.buttons_side.user_dropdown;
   const { page_words, auth } = usePage().props as ServerPageProps;
   const { user } = auth;
   const dispatch = useDispatch();

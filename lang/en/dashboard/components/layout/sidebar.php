@@ -1,8 +1,9 @@
 <?php
 return [
   "dashboard" => "Dashboard",
-  'profile' => "Profile",
+  'personal_settings' => "Personal Settings",
   'users' => "Users",
   'modules' => "Modules",
-  'roles' => "Roles"
+  'roles' => "Roles",
+  'settings' => "Settings"
 ];

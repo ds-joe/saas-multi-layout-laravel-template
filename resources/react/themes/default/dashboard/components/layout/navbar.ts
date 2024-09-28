@@ -1,5 +1,5 @@
 export default {
-  base: 'flex items-center justify-between bg-dark px-4 py-3 ',
+  base: 'flex items-center justify-between bg-dark px-4 py-3 z-10',
   logo_side: {
     base: 'flex items-center justify-between',
     logo: 'w-32',

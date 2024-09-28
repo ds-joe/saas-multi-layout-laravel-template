@@ -13,7 +13,7 @@ import { cn } from '@/utilities/tailwind/cn';
 
 const Sidebar: RC = () => {
   const theme = useTheme();
-  const sidebarTheme = theme.dashboard.components.sidebar;
+  const sidebarTheme = theme.dashboard.components.layout.sidebar;
   const sidebarOpen = useSelector(
     (state: DashboardRootState) => state.dashboard.layout.sidebarOpen,
   );

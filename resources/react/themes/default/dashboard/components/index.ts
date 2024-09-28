@@ -2,8 +2,7 @@
 import modules from './modules';
 
 // Layout
-import navbar from './layout/navbar';
-import sidebar from './layout/sidebar';
+import layout from './layout';
 
 // custom
 import state_card from './utils/state_card';
@@ -13,6 +12,5 @@ export default {
   utils: {
     state_card,
   },
-  navbar,
-  sidebar,
+  layout
 };

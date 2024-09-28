@@ -1,4 +1,4 @@
 export default {
-  Rubik: ['Rubik', 'sans-serif'],
+  Inter: ['Inter', 'sans-serif'],
   Nunito: ['Nunito', 'sans-serif'],
 };

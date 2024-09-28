@@ -13,7 +13,7 @@ import { CollapsibleItemProps } from '@/types/Components/Dashboard/Layout/Sideba
 const CollapseRoute: RC<CollapsibleItemProps> = (props) => {
   const Icon = props.icon;
   const theme = useTheme();
-  const collapseRouteTheme = theme.dashboard.components.sidebar.collapse_route;
+  const collapseRouteTheme = theme.dashboard.components.layout.sidebar.collapse_route;
 
   return (
     <Link

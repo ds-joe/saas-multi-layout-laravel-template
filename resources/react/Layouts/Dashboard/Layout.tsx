@@ -18,6 +18,7 @@ import { DashboardRootState } from '@/redux/store';
 import { Head } from '@inertiajs/react';
 import Navbar from '@/Components/Dashboard/Layout/Navbar';
 import Sidebar from '@/Components/Dashboard/Layout/Sidebar';
+import PageContentCover from '@/Components/Dashboard/Layout/PageContentCover';
 
 const Layout: RPL = ({ children, title }) => {
   const toast = useNotification();
@@ -47,7 +48,10 @@ const Layout: RPL = ({ children, title }) => {
             <Navbar />
             <div className={dashboard.layout.content_area}>
               <Sidebar />
-              <div className={dashboard.layout.page_content}>{children}</div>
+              <div className={dashboard.layout.page_content}>
+                <PageContentCover visible={layoutSettings.sidebarOpen} />
+                {children}
+              </div>
             </div>
           </main>
         </NotificationProvider>

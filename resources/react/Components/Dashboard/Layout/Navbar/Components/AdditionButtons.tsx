@@ -23,7 +23,7 @@ import useTheme from '@/hooks/useTheme';
 const AdditionButtons: RC = () => {
   const theme = useTheme();
   const additionButtonsTheme =
-    theme.dashboard.components.navbar.buttons_side.addition_buttons;
+    theme.dashboard.components.layout.navbar.buttons_side.addition_buttons;
 
   const { page_words } = usePage().props as ServerPageProps;
 

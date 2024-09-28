@@ -10,7 +10,7 @@ import logo from '~/images/global/logo2.png';
 
 const Navbar: RC = () => {
   const theme = useTheme();
-  const navbarTheme = theme.dashboard.components.navbar;
+  const navbarTheme = theme.dashboard.components.layout.navbar;
 
   return (
     <nav className={navbarTheme.base}>
