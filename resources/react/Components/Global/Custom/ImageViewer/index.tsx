@@ -16,7 +16,7 @@ import type { ImageViewerProps } from '@/types/Components/Global/Custom/ImageVie
 const ImageViewer = forwardRef<HTMLSelectElement, ImageViewerProps>(
   (props, ref) => {
     const theme = useTheme();
-    const imageViewerTheme = theme.global.components.image_viewer;
+    const imageViewerTheme = theme.global.components.custom.image_viewer;
     const images = useMemo(() => {
       return props.images;
     }, [props.images]);

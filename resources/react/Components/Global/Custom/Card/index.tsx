@@ -67,7 +67,7 @@ export const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(
 export const CardTitle = forwardRef<HTMLHeadingElement, CardTitleProps>(
   (props, ref) => {
     const theme = useTheme();
-    const cardTheme = theme.global.components.card;
+    const cardTheme = theme.global.components.custom.card;
 
     return (
       <Typography
@@ -86,7 +86,7 @@ export const CardDescription = forwardRef<
   CardDescriptionProps
 >((props, ref) => {
   const theme = useTheme();
-  const cardTheme = theme.global.components.card;
+  const cardTheme = theme.global.components.custom.card;
 
   return (
     <Typography

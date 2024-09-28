@@ -15,7 +15,7 @@ import type { AvatarProps } from '@/types/Components/Global/Custom/Avatar';
 
 const Avatar = forwardRef<HTMLImageElement, AvatarProps>((props, ref) => {
   const theme = useTheme();
-  const avatarTheme = theme.global.components.avatar;
+  const avatarTheme = theme.global.components.custom.avatar;
 
   const [hasError, setHasError] = useState<boolean>(false);
   if (hasError) {

@@ -48,7 +48,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, MenuItemProps>(
 export const DropdownList = forwardRef<HTMLDivElement, MenuListProps>(
   (props, ref) => {
     const theme = useTheme();
-    const dropdownTheme = theme.global.components.dropdown;
+    const dropdownTheme = theme.global.components.custom.dropdown;
 
     return (
       <MenuList
@@ -63,7 +63,7 @@ export const DropdownList = forwardRef<HTMLDivElement, MenuListProps>(
 export const DropdownLabel = forwardRef<HTMLHeadingElement, MenuLabelProps>(
   (props, ref) => {
     const theme = useTheme();
-    const dropdownTheme = theme.global.components.dropdown;
+    const dropdownTheme = theme.global.components.custom.dropdown;
 
     return (
       <Typography<'p'>

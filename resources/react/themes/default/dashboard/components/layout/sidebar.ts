@@ -1,5 +1,5 @@
 export default {
-  base: 'flex flex-col gap-2 px-4 pt-4 pb-4 bg-dark-secondary w-[250px] transition-all duration-5000 lg-max:relative lg-max:-left-full',
+  base: 'flex flex-col gap-2 px-4 pt-4 pb-4 bg-dark-secondary min-w-[250px] w-[250px] max-w-[250px] transition-all duration-5000 lg-max:relative lg-max:-left-full',
   open: 'lg-max:left-0',
   collapse: {
     base: 'mt-4',

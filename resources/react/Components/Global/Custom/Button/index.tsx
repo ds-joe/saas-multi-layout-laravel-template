@@ -15,7 +15,7 @@ import type { ButtonProps } from '@/types/Components/Global/Custom/Button';
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const theme = useTheme();
-  const buttonTheme = theme.global.components.button;
+  const buttonTheme = theme.global.components.custom.button;
 
   return (
     <MButton

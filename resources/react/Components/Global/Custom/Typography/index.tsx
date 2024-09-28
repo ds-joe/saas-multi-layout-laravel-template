@@ -21,7 +21,7 @@ const Typography: TypographyComponent = forwardRef<
   TypographyProps<'p'>
 >((props, ref) => {
   const theme = useTheme();
-  const typographyTheme = theme.global.components.typography;
+  const typographyTheme = theme.global.components.custom.typography;
 
   return (
     <MTypography

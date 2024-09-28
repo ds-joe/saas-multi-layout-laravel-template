@@ -15,7 +15,7 @@ import type { CheckboxProps } from '@/types/Components/Global/Custom/Form';
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
   const theme = useTheme();
-  const checkboxTheme = theme.global.components.checkbox;
+  const checkboxTheme = theme.global.components.custom.checkbox;
   return (
     <MCheckbox
       color={checkboxTheme.color}

@@ -1,6 +1,6 @@
 // charts options
-import lineChart from "./linechart";
+import lineChart from './linechart';
 
 export default {
-  lineChart
-}
+  lineChart,
+};

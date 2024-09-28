@@ -12,7 +12,7 @@ import type { FormGroupProps } from '@/types/Components/Global/Custom/Form';
 const FormGroup = forwardRef<HTMLDivElement, FormGroupProps>((props, ref) => {
   const isDouble = props.double == false || !props.double ? false : true;
   const theme = useTheme();
-  const formTheme = theme.global.components.form;
+  const formTheme = theme.global.components.custom.form;
 
   return (
     <div

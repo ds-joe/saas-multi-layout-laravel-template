@@ -14,5 +14,5 @@ export default {
   layout,
   components,
   pages,
-  utilities
+  utilities,
 };

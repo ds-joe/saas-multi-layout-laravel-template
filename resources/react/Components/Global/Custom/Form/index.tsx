@@ -15,7 +15,7 @@ import type { FormProps } from '@/types/Components/Global/Custom/Form';
 
 const Form = forwardRef<HTMLFormElement, FormProps>((props, ref) => {
   const theme = useTheme();
-  const formTheme = theme.global.components.form;
+  const formTheme = theme.global.components.custom.form;
 
   return (
     <form

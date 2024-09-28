@@ -1,16 +1,16 @@
 // Types
-import type { Props } from "react-apexcharts";
+import type { Props } from 'react-apexcharts';
 
 // Tailwind utils
-import colors from "~tailwind/custom/colors";
+import colors from '~tailwind/custom/colors';
 
 const lineChart = (
   series: Props['series'],
   categories: Array<string | number>,
-  options: Props['options'] = {}
+  options: Props['options'] = {},
 ): Props => {
   return {
-    type: "line",
+    type: 'line',
     height: 300,
     series,
     options: {
@@ -23,7 +23,7 @@ const lineChart = (
       },
       title: {
         // @ts-ignore it works fine but has type issue
-        show: "",
+        show: '',
         ...options.title,
       },
       dataLabels: {
@@ -32,8 +32,8 @@ const lineChart = (
       },
       colors: [colors.primary.secondary, colors.success.secondary],
       stroke: {
-        lineCap: "round",
-        curve: "smooth",
+        lineCap: 'round',
+        curve: 'smooth',
         ...options.stroke,
       },
       markers: {
@@ -49,9 +49,9 @@ const lineChart = (
         },
         labels: {
           style: {
-            colors: "#616161",
-            fontSize: "12px",
-            fontFamily: "inherit",
+            colors: '#616161',
+            fontSize: '12px',
+            fontFamily: 'inherit',
             fontWeight: 400,
             ...options.xaxis?.labels?.style,
           },
@@ -63,9 +63,9 @@ const lineChart = (
       yaxis: {
         labels: {
           style: {
-            colors: "#616161",
-            fontSize: "12px",
-            fontFamily: "inherit",
+            colors: '#616161',
+            fontSize: '12px',
+            fontFamily: 'inherit',
             fontWeight: 400,
             // @ts-ignore it works fine but has type issue
             ...options.yaxis?.labels.style,
@@ -77,14 +77,14 @@ const lineChart = (
       },
       grid: {
         show: true,
-        borderColor: "#dddddd",
+        borderColor: '#dddddd',
         strokeDashArray: 5,
         xaxis: {
           lines: {
             show: true,
             ...options.grid?.xaxis?.lines,
           },
-          ...options.grid?.xaxis
+          ...options.grid?.xaxis,
         },
         padding: {
           top: 5,
@@ -98,13 +98,12 @@ const lineChart = (
         ...options.fill,
       },
       tooltip: {
-        theme: "dark",
+        theme: 'dark',
         ...options.tooltip,
       },
       ...options,
     },
   };
 };
-
 
 export default lineChart;
