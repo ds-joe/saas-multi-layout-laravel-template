@@ -66,7 +66,7 @@ export const DropdownLabel = forwardRef<HTMLHeadingElement, MenuLabelProps>(
     const dropdownTheme = theme.global.components.custom.dropdown;
 
     return (
-      <Typography<'p'>
+      <Typography
         {...props}
         as="h4"
         variant="h4"

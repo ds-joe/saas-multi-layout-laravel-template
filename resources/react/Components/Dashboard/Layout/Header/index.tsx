@@ -13,15 +13,14 @@ import { cn } from "@/utilities/tailwind/cn"
 // Types
 import type { HeaderProps } from "@/types/Components/Dashboard/Layout/Header"
 
-const Header = forwardRef<HTMLHeadingElement, HeaderProps>((props, ref) => {
+const Header = forwardRef<HTMLHeadingElement, HeaderProps>((props, _ref) => {
   const theme = useTheme().dashboard.components.layout.header;
 
   return (
     <header className={cn(theme.header.base)}>
       <Typography
         variant="h3"
-        ref={ref}
-        {...props}
+        {...(props as any)}
         className={cn(theme.typography.base, props.className)}
       >
         {props.title}

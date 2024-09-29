@@ -12,22 +12,20 @@ import { cn } from '@/utilities/tailwind/cn';
 
 // Types
 import type {
-  TypographyComponent,
   TypographyProps,
 } from '@/types/Components/Global/Custom/Typography';
 
-const Typography: TypographyComponent = forwardRef<
-  HTMLParagraphElement,
-  TypographyProps<'p'>
+const Typography = forwardRef<
+  any,
+  TypographyProps | any
 >((props, ref) => {
-  const theme = useTheme();
-  const typographyTheme = theme.global.components.custom.typography;
+  const theme = useTheme().global.components.custom.typography;
 
   return (
     <MTypography
       {...(props as any)}
       ref={ref}
-      className={cn(typographyTheme.base, props.className)}
+      className={cn(theme.base, props.className)}
     ></MTypography>
   );
 });

@@ -27,8 +27,7 @@ const Collapse: RC<CollapsibleProps> = (props) => {
     <div className={theme.base}>
       <Typography
         as="label"
-        variant="label"
-        {...props}
+        {...(props as any)}
         className={cn(theme.label, props.className)}
         onClick={() => setCollapseOpen(!collapseOpen)}
       >
@@ -53,7 +52,6 @@ export const CollapseLabel: RC<{ title?: string }> = ({ title }) => {
   return (
     <Typography
       as="label"
-      variant="label"
       className={cn(theme.label, theme.base)}
     >{title}</Typography>
   )

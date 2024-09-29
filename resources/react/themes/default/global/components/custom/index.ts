@@ -7,6 +7,8 @@ import form from './form';
 import image_viewer from './image_viewer';
 import table from './table';
 import typography from './typography';
+import input from "./input";
+import label from './label';
 
 export default {
   avatar,
@@ -18,4 +20,6 @@ export default {
   image_viewer,
   table,
   typography,
+  input,
+  label
 };
