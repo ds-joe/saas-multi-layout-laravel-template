@@ -11,10 +11,10 @@ return new class extends Migration
    */
   public function up(): void
   {
-    Schema::create('user_metas', function (Blueprint $table) {
+    Schema::create('user_meta', function (Blueprint $table) {
       $table->id();
       $table->string('key');
-      $table->string('value', 1000)->nullable();
+      $table->longText('value')->nullable();
       $table->foreignId("user_id")->constrained('users')->cascadeOnDelete();
       $table->softDeletes();
       $table->timestamps();
@@ -26,6 +26,6 @@ return new class extends Migration
    */
   public function down(): void
   {
-    Schema::dropIfExists('user_metas');
+    Schema::dropIfExists('user_meta');
   }
 };

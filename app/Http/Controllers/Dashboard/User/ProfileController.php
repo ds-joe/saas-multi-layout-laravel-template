@@ -134,7 +134,6 @@ class ProfileController extends UserController
 
       $user->meta()->where('key', '_first_name')->update(['value' => $request->_first_name]);
       $user->meta()->where('key', '_last_name')->update(['value' => $request->_last_name]);
-      $user->meta()->where('key', '_phone')->update(['value' => $request->_phone]);
     });
 
     return back()->with(Notification::create(

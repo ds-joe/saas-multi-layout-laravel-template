@@ -33,7 +33,6 @@ class ProfileUpdateMainDetailsRequest extends FormRequest
       'password_confirmation' => "sometimes|nullable",
       '_first_name' => ['required', new NameRule()],
       '_last_name' => ['sometimes', "nullable", new NameRule()],
-      '_phone' => ['sometimes', "nullable", new PhoneRule]
     ];
   }
 }

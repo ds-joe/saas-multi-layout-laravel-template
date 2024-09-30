@@ -18,7 +18,7 @@ const Avatar = forwardRef<HTMLImageElement, AvatarProps>((props, ref) => {
   const avatarTheme = theme.global.components.custom.avatar;
 
   const [hasError, setHasError] = useState<boolean>(false);
-  if (hasError) {
+  if (hasError || !props.src) {
     return (
       <div
         {...props}

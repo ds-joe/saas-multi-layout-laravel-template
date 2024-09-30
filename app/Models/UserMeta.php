@@ -18,6 +18,13 @@ class UserMeta extends Model
   use HasFactory, SoftDeletes;
 
   /**
+   * Table name
+   *
+   * @var string
+   */
+  protected $table = 'user_meta';
+
+  /**
    * Allowed fillable columns.
    *
    * @var array

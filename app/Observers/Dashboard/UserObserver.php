@@ -3,6 +3,7 @@
 namespace App\Observers\Dashboard;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class UserObserver
 {
@@ -16,17 +17,17 @@ class UserObserver
     '_first_name' => 'Demo',
     '_last_name' => null,
     '_avatar' => null,
-    '_phone' => null,
   ];
 
   public function created(User $user)
   {
-
-    foreach ($this->metaData as $key => $value) {
-      $user->meta()->create([
-        'key' => $key,
-        'value' => $value,
-      ]);
-    }
+    DB::transaction(function () use ($user) {
+      foreach ($this->metaData as $key => $value) {
+        $user->meta()->create([
+          'key' => $key,
+          'value' => $value,
+        ]);
+      }
+    });
   }
 }

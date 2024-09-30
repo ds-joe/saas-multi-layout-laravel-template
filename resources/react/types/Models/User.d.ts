@@ -1,7 +1,6 @@
 export interface UserMetaModel {
   _first_name: string;
   _last_name?: string;
-  _phone?: string;
 }
 
 export interface UserModel extends UserMetaModel {
