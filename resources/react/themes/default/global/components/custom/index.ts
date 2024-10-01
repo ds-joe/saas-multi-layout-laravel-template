@@ -9,6 +9,7 @@ import table from './table';
 import typography from './typography';
 import input from "./input";
 import label from './label';
+import tabs from './tabs';
 
 export default {
   avatar,
@@ -21,5 +22,6 @@ export default {
   table,
   typography,
   input,
-  label
+  label,
+  tabs
 };
