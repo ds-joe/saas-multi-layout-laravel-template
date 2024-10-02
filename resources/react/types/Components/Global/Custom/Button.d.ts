@@ -8,7 +8,7 @@ import type {
   ripple,
   className,
   children,
-} from '../../types/components/button';
+} from '@material-tailwind/react/types/components/button';
 
 export type ButtonProps = ComponentPropsWithRef<'button'> & {
   variant?: variant;
