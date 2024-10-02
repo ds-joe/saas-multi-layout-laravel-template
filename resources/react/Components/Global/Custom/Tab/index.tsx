@@ -10,7 +10,6 @@ import { cn } from "@/utilities/tailwind/cn";
 // Types
 import type { TabsProps, TabProps, TabsBodyProps, TabsHeaderProps, TabPanelProps } from "@/types/Components/Global/Custom/Tab";
 
-
 export const Tabs: RC<TabsProps> = (props) => {
   return (
     <MTabs {...props} />
@@ -23,8 +22,8 @@ export const Tab: RC<TabProps> = (props) => {
   return (
     <MTab
       {...(props as any)}
-      className={cn(theme.tab.base, props.className)}
       activeClassName={cn(theme.tab.active, props.activeClassName)}
+      className={cn(theme.tab.base, props.className)}
     />
   );
 }
@@ -39,6 +38,7 @@ export const TabsBody: RC<TabsBodyProps> = (props) => {
 
 export const TabsHeader: RC<TabsHeaderProps> = (props) => {
   const theme = useTheme().global.components.custom.tabs;
+
   return (
     <MTabsHeader
       {...(props as any)}
@@ -52,9 +52,12 @@ export const TabsHeader: RC<TabsHeaderProps> = (props) => {
 
 
 export const TabPanel: RC<TabPanelProps> = (props) => {
+  const theme = useTheme().global.components.custom.tabs;
+
   return (
     <MTabPanel
       {...(props as any)}
+      className={cn(theme.tabPanel.base, props.className)}
     />
   );
 }

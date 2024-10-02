@@ -114,7 +114,7 @@ class ProfileController extends UserController
     $user = User::findOrFail($request->user()->id);
 
     # Meta data required keys.
-    $requiredKeys = ['_first_name', '_last_name', '_phone'];
+    $requiredKeys = ['_first_name', '_last_name'];
     $containsAllKeys = collect($user->meta)->whereIn('key', $requiredKeys)->pluck('key')->intersect($requiredKeys)->count() === count($requiredKeys);
 
     if (!$containsAllKeys) {

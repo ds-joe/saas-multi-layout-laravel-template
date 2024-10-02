@@ -3,9 +3,11 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 // Reducers
 import themeReducer from './slicers/theme';
+import apiFormReducer from "./slicers/apiForm"
 
 const globalReducers = combineReducers({
-  themeReducer,
+  theme: themeReducer,
+  apiForm: apiFormReducer,
 });
 
 export default globalReducers;

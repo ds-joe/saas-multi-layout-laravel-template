@@ -50,7 +50,7 @@ const Layout: RPL = ({ children, title }) => {
               <Sidebar />
               <div className={dashboard.layout.page_content}>
                 <PageContentCover visible={layoutSettings.sidebarOpen.toString()} />
-                <div className="container my-4">
+                <div className="container ">
                   {children}
                 </div>
               </div>

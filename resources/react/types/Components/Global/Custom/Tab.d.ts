@@ -9,6 +9,7 @@ export type TabsProps = ComponentPropsWithoutRef<'div'> & {
 export type TabProps = ComponentPropsWithoutRef<'div'> & {
   value: string | number
   activeClassName?: string;
+  disabled?: boolean;
 }
 
 export type TabsBodyProps = ComponentPropsWithoutRef<'div'> & {

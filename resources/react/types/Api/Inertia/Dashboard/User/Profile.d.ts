@@ -8,6 +8,6 @@ export type UpdateProfileMainDetailsApi = {
 }
 
 export type UpdateProfileAvatarApi = {
-  avatar: File | null;
+  avatar?: File | null;
 }
 

@@ -1,5 +1,5 @@
 export default {
-  main: 'flex flex-col min-h-screen bg-light font-Inter',
+  main: 'flex flex-col min-h-screen bg-light ',
   content_area: 'flex flex-1',
-  page_content: 'flex-grow max-w-full overflow-x-hidden',
+  page_content: 'flex-grow max-w-full overflow-x-hidden overflow-y-auto mt-3 mb-6',
 };

@@ -17,7 +17,7 @@ export type InputProps = ComponentPropsWithRef<'input'> & {
   variant?: variant;
   size?: size;
   color?: color;
-  error?: error;
+  error?: error | string;
   success?: success;
   icon?: icon;
   labelProps?: labelProps;
