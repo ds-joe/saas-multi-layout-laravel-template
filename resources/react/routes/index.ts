@@ -42,6 +42,7 @@ const routes: Array<Route> = [
   {
     id: 4,
     translated_word: 'modules',
+    route: "dashboard.modules",
     icon: HiOutlineFlag,
     allowed_user_types: [],
     disallowed_user_types: [],

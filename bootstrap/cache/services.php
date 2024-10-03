@@ -35,9 +35,10 @@
     31 => 'Pest\\Laravel\\PestServiceProvider',
     32 => 'Spatie\\LaravelImageOptimizer\\ImageOptimizerServiceProvider',
     33 => 'Spatie\\Permission\\PermissionServiceProvider',
-    34 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
-    35 => 'App\\Providers\\AppServiceProvider',
-    36 => 'Spatie\\Permission\\PermissionServiceProvider',
+    34 => 'Spatie\\QueryBuilder\\QueryBuilderServiceProvider',
+    35 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
+    36 => 'App\\Providers\\AppServiceProvider',
+    37 => 'Spatie\\Permission\\PermissionServiceProvider',
   ),
   'eager' => 
   array (
@@ -60,9 +61,10 @@
     16 => 'Pest\\Laravel\\PestServiceProvider',
     17 => 'Spatie\\LaravelImageOptimizer\\ImageOptimizerServiceProvider',
     18 => 'Spatie\\Permission\\PermissionServiceProvider',
-    19 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
-    20 => 'App\\Providers\\AppServiceProvider',
-    21 => 'Spatie\\Permission\\PermissionServiceProvider',
+    19 => 'Spatie\\QueryBuilder\\QueryBuilderServiceProvider',
+    20 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
+    21 => 'App\\Providers\\AppServiceProvider',
+    22 => 'Spatie\\Permission\\PermissionServiceProvider',
   ),
   'deferred' => 
   array (

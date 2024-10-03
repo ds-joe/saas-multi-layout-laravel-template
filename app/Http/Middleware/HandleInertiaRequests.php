@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Facade\Module;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use App\Facade\Notification;
@@ -31,12 +32,12 @@ class HandleInertiaRequests extends Middleware
    */
   public function share(Request $request): array
   {
-
     return [
       ...parent::share($request),
       'auth' => [
         'user' => $request->user() ? new InertiaUserResource($request->user()) : null,
       ],
+      'modules' => Module::getModulesWithConfig(),
       Notification::getSessionName() => Notification::getSessionNotification()
     ];
   }

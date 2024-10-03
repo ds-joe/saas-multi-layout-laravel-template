@@ -8,6 +8,7 @@ import type { TypeOptions } from 'react-toastify';
 import type { UserModel } from '@/types/Models/User';
 import { route as ziggyRoute } from 'ziggy-js';
 import type Router from '@/Services/Router';
+import type { Modules } from './Services/Module';
 
 declare global {
 
@@ -45,5 +46,6 @@ declare global {
       message: string;
       type: TypeOptions;
     };
+    modules: Modules,
   } & Page['props'];
 }

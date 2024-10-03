@@ -85,7 +85,7 @@ const AvatarArea: RC = () => {
         >
           <Avatar
             src={auth.user?.avatar}
-            className="min-h-16 w-16 mb-5"
+            className="min-h-20 w-20 mb-5 text-3xl"
             fill_back={auth.user?.username[0]}
           />
           <div className="flex items-center gap-2">
