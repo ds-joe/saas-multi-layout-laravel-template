@@ -5,7 +5,7 @@ import { usePage } from "@inertiajs/react";
 // Hooks
 import useFormRequest from "@/hooks/useFormRequest";
 import useNotification from "@/hooks/useNotification";
-
+import usePermission from "@/hooks/usePermission";
 
 // Components
 import { CardTitle, CardDescription } from "@/Components/Global/Custom/Card";
@@ -17,8 +17,9 @@ import { updateAvatar, removeAvatar } from "@/api/inertia/dashboard/user/profile
 
 const AvatarArea: RC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
-
   const toast = useNotification();
+
+  const { can } = usePermission();
   const { auth, page_words } = usePage().props as ServerPageProps;
   const { status, setColumn, data, call: updateCallback } = useFormRequest(updateAvatar, {
     data: {
@@ -94,7 +95,7 @@ const AvatarArea: RC = () => {
               type="button"
               color={'blue'}
               size={'sm'}
-              disabled={status.processing}
+              disabled={(status.processing || !can('edit profile'))}
             >
               {page_words?.update}
             </Button>

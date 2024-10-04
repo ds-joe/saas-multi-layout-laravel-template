@@ -6,6 +6,7 @@ import DashboardLayout from '@/Layouts/Dashboard';
 
 // Hooks
 import useFormRequest from '@/hooks/useFormRequest';
+import usePermission from '@/hooks/usePermission';
 
 // Components
 import Button from '@/Components/Global/Custom/Button';
@@ -20,9 +21,9 @@ import ProfileTab from './Components/TabsContent/ProfileTab';
 // Apis
 import { updateMainDetails } from '@/api/inertia/dashboard/user/profile';
 
-
 const Profile: RP = () => {
   const { page_words, auth } = usePage().props as ServerPageProps;
+  const { can } = usePermission();
   const user = auth.user;
   const { call, formId: requestFormId, status } = useFormRequest(updateMainDetails, {
     data: {
@@ -43,7 +44,7 @@ const Profile: RP = () => {
             onClick={() => call()}
             color={'blue'}
             size={'sm'}
-            disabled={status.processing}
+            disabled={(status.processing || !can('edit profile'))}
           >{page_words?.save}</Button>
         </div>
       </Header>
@@ -67,7 +68,7 @@ const Profile: RP = () => {
           onClick={() => call()}
           color={'blue'}
           size={'sm'}
-          disabled={status.processing}
+          disabled={(status.processing || !can('edit profile'))}
         >{page_words?.save}</Button>
       </div>
     </Section>

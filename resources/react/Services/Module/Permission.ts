@@ -11,23 +11,29 @@ class Permission {
   }
 
   /**
-   * Check if contain any active of those modules.
+   * Check if any of the given modules are active.
    *
-   * @param { Array<string> } modules
+   * @param { Array<string> } modules - An array of module names or aliases.
    * @return { boolean }
    */
   public hasAnyActiveModules(modules: Array<string>): boolean {
-    return modules.some((module) => this.modules[module].status);
+    return modules.some((module) => {
+      const foundModule = this.modules.find((m) => m.name === module);
+      return foundModule && !!foundModule.status;
+    });
   }
 
   /**
-   * Check if all active
+   * Check if all of the given modules are active.
    *
-   * @param { Array<string> } modules
+   * @param { Array<string> } modules - An array of module names or aliases.
    * @return { boolean }
    */
   public hasAllActiveModules(modules: Array<string>): boolean {
-    return modules.every((module) => this.modules[module].status);
+    return modules.every((module) => {
+      const foundModule = this.modules.find((m) => m.name === module);
+      return foundModule && !!foundModule.status;
+    });
   }
 
   /**

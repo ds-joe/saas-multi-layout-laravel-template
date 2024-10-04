@@ -22,11 +22,13 @@ import { modulesUpdateApi } from "@/api/inertia/dashboard/module";
 
 // Types
 import type { Modules } from "@/types/Services/Module";
+import usePermission from "@/hooks/usePermission";
 
 const Module: RP = () => {
   const { page_words, modules } = usePage().props as ServerPageProps;
+  const { can } = usePermission();
   const [filteredModules, setFilteredModules] = useState<Modules>(modules);
-  const { call, formId, data } = useFormRequest(modulesUpdateApi, {
+  const { call, formId, data, status } = useFormRequest(modulesUpdateApi, {
     data: {
       modules
     }
@@ -43,7 +45,12 @@ const Module: RP = () => {
   return (
     <Section>
       <Header title={page_words?.modules}>
-        <Button onClick={() => call()} color="blue" size="sm">Save</Button>
+        <Button
+          onClick={() => call()}
+          color="blue"
+          size="sm"
+          disabled={status.processing || !can('update modules')}
+        >{page_words?.save}</Button>
       </Header>
       <div className="grid lg:grid-cols-12 gap-4">
         <Card className="max-lg:order-2 lg:col-span-8">

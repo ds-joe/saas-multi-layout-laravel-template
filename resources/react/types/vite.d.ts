@@ -37,15 +37,16 @@ declare global {
    *  In coming data from sever
    ************************************************************************ */
 
-  type ServerPageProps<P = {}> = {
+  type ServerPageProps<P = {}> = P & {
     auth: {
       user?: UserModel;
+      permissions: Array<string>
     };
     page_words: Record<string, string | undefined>;
     notification?: {
       message: string;
       type: TypeOptions;
     };
-    modules: Modules,
+    modules: Modules;
   } & Page['props'];
 }

@@ -15,8 +15,10 @@ import placeholderImage from "~/images/global/placeholder.png";
 
 // Apis
 import { modulesUpdateApi } from "@/api/inertia/dashboard/module";
+import usePermission from "@/hooks/usePermission";
 
 const ModuleCard: RC<{ module: Module, formId: string, index: number }> = (props) => {
+  const { can } = usePermission();
   const { setColumn, data } = useFormRequest(modulesUpdateApi, {
     data: {} as any
   }, props.formId);
@@ -55,6 +57,7 @@ const ModuleCard: RC<{ module: Module, formId: string, index: number }> = (props
         color="blue"
         defaultChecked={props.module.status.toString() == 'true'}
         onChange={handleChecked}
+        disabled={!can('update modules')}
       />
     </div>
   )

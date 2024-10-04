@@ -27,16 +27,17 @@ const routes: Array<Route> = [
     icon: HiOutlineUsers,
     allowed_user_types: [],
     disallowed_user_types: [],
-    allowed_permissions: [],
+    allowed_permissions: ['show users'],
     disallowed_permissions: [],
   },
   {
     id: 3,
     translated_word: 'roles',
+    route: 'dashboard.roles',
     icon: HiOutlineShieldExclamation,
     allowed_user_types: [],
     disallowed_user_types: [],
-    allowed_permissions: [],
+    allowed_permissions: ['show roles'],
     disallowed_permissions: [],
   },
   {
@@ -46,7 +47,7 @@ const routes: Array<Route> = [
     icon: HiOutlineFlag,
     allowed_user_types: [],
     disallowed_user_types: [],
-    allowed_permissions: [],
+    allowed_permissions: ['show modules'],
     disallowed_permissions: [],
   },
   {
@@ -55,7 +56,7 @@ const routes: Array<Route> = [
     is_label: true,
     allowed_user_types: [],
     disallowed_user_types: [],
-    allowed_permissions: [],
+    allowed_permissions: ['show profile'],
     disallowed_permissions: [],
   },
   {
@@ -65,7 +66,7 @@ const routes: Array<Route> = [
     route: 'user.profile',
     allowed_user_types: [],
     disallowed_user_types: [],
-    allowed_permissions: [],
+    allowed_permissions: ['show profile'],
     disallowed_permissions: [],
   },
 ];

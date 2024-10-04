@@ -15,8 +15,8 @@ import routes from '@/routes';
 import type { Route as RouteType } from '@/types/Route';
 
 const Route: RC<RouteType> = (routeProps) => {
-  const { page_words } = usePage().props as ServerPageProps;
-  const routeService = new RouteService(routes, []);
+  const { page_words, auth } = usePage().props as ServerPageProps;
+  const routeService = new RouteService(routes, auth.permissions);
   const { icon, translated_word, child_routes, route: routeName } = routeProps;
   const routeLabel = page_words[translated_word ?? ''] ?? '';
 
@@ -34,7 +34,6 @@ const Route: RC<RouteType> = (routeProps) => {
       <CollapseLabel title={routeLabel} />
     )
   }
-
 
   // Render collapsible route if applicable
   if (routeService.isCollapsibleRoute(routeProps)) {

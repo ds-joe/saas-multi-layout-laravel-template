@@ -2,13 +2,13 @@
 import { router } from "@inertiajs/core";
 
 // Classes
-import Validation from "./Validation";
+import Axios from "./Axios";
 
 // Types
 import type { Router as RouterType, VisitOptions, Method, Errors } from "@inertiajs/core";
 import type { RouterInertiaClosureCallback } from "@/types/Services/Router";
 
-class Inertia extends Validation {
+class Inertia extends Axios {
 
   /**
    * Inertia router
