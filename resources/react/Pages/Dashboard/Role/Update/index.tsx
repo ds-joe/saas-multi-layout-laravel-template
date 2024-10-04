@@ -1,5 +1,6 @@
 // Dependencies
 import { Link, useForm, usePage } from "@inertiajs/react";
+import { type ChangeEvent, type FormEvent, useEffect } from "react";
 
 // Hooks
 import usePermission from "@/hooks/usePermission";
@@ -23,8 +24,7 @@ import { FormGroup } from "@/Components/Global/Custom/Form";
 
 // Types
 import type { PermissionModel } from "@/types/Models/Permission";
-import { RoleModel } from "@/types/Models/Role";
-import { ChangeEvent, FormEvent, useEffect } from "react";
+import type { RoleModel } from "@/types/Models/Role";
 
 const CreateRole: RP = () => {
   const toast = useNotification();
@@ -150,6 +150,7 @@ const CreateRole: RP = () => {
                         {
                           filteredPermissions[permissionName].map((permission, i2) => (
                             <Checkbox
+                              disabled={role.id == 1}
                               key={`permission-child-${permission}-${i2}`}
                               label={permission}
                               className="h-4 w-4"

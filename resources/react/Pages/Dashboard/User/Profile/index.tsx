@@ -5,8 +5,8 @@ import { usePage } from '@inertiajs/react';
 import DashboardLayout from '@/Layouts/Dashboard';
 
 // Hooks
-import useFormRequest from '@/hooks/useFormRequest';
 import usePermission from '@/hooks/usePermission';
+import useStateForm from '@/hooks/useStateForm';
 
 // Components
 import Button from '@/Components/Global/Custom/Button';
@@ -18,21 +18,25 @@ import { Tabs, TabPanel, TabsBody, TabsHeader, Tab } from '@/Components/Global/C
 // Tabs Components
 import ProfileTab from './Components/TabsContent/ProfileTab';
 
-// Apis
-import { updateMainDetails } from '@/api/inertia/dashboard/user/profile';
-
 const Profile: RP = () => {
   const { page_words, auth } = usePage().props as ServerPageProps;
   const { can } = usePermission();
   const user = auth.user;
-  const { call, formId: requestFormId, status } = useFormRequest(updateMainDetails, {
-    data: {
-      _first_name: user?._first_name || "",
-      _last_name: user?._last_name || "",
-      username: user?.username || "",
-      email: user?.email || ""
-    }
+  const { formId, processing, inertiaRequest, data } = useStateForm({
+    _first_name: user?._first_name || "",
+    _last_name: user?._last_name || "",
+    username: user?.username || "",
+    email: user?.email || ""
   });
+
+
+  // Handle submit
+  const handleSubmit = () => {
+    inertiaRequest('put', route('user.profile.update.details'), data, {
+      preserveScroll: true,
+      preserveState: true
+    });
+  }
 
   return (
     <Section>
@@ -41,10 +45,10 @@ const Profile: RP = () => {
       >
         <div className='flex items-center gap-2'>
           <Button
-            onClick={() => call()}
+            onClick={handleSubmit}
             color={'blue'}
             size={'sm'}
-            disabled={(status.processing || !can('edit profile'))}
+            disabled={(processing || !can('edit profile'))}
           >{page_words?.save}</Button>
         </div>
       </Header>
@@ -58,17 +62,17 @@ const Profile: RP = () => {
               <Tab value={'security'} disabled>{page_words?.security}</Tab>
             </TabsHeader>
             <TabsBody className='mt-4'>
-              <TabPanel value={'profile'}><ProfileTab formId={requestFormId} /></TabPanel>
+              <TabPanel value={'profile'}><ProfileTab formId={formId} /></TabPanel>
             </TabsBody>
           </Tabs>
         </CardBody>
       </Card>
       <div className='flex items-center justify-end gap-2'>
         <Button
-          onClick={() => call()}
+          onClick={() => handleSubmit()}
           color={'blue'}
           size={'sm'}
-          disabled={(status.processing || !can('edit profile'))}
+          disabled={(processing || !can('edit profile'))}
         >{page_words?.save}</Button>
       </div>
     </Section>

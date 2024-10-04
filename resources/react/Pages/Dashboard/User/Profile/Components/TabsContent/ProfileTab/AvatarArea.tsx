@@ -1,9 +1,8 @@
 // Dependencies
 import { ChangeEvent, useEffect, useRef } from "react";
-import { usePage } from "@inertiajs/react";
+import { usePage, useForm, router } from "@inertiajs/react";
 
 // Hooks
-import useFormRequest from "@/hooks/useFormRequest";
 import useNotification from "@/hooks/useNotification";
 import usePermission from "@/hooks/usePermission";
 
@@ -12,35 +11,31 @@ import { CardTitle, CardDescription } from "@/Components/Global/Custom/Card";
 import Button from "@/Components/Global/Custom/Button";
 import Avatar from "@/Components/Global/Custom/Avatar";
 
-// Apis
-import { updateAvatar, removeAvatar } from "@/api/inertia/dashboard/user/profile";
-
 const AvatarArea: RC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const toast = useNotification();
 
   const { can } = usePermission();
   const { auth, page_words } = usePage().props as ServerPageProps;
-  const { status, setColumn, data, call: updateCallback } = useFormRequest(updateAvatar, {
-    data: {
-      avatar: null as null | File
-    },
-    options: {
+  const { post, processing, setData, data } = useForm({
+    avatar: null as null | File
+  })
+
+  // Handle update avatar
+  const handleUpdateAvatar = () => {
+    post(route('user.profile.update.avatar'), {
       onError: (error) => {
         toast(error?.avatar, 'error');
       }
-    }
-  });
-  const { call: removeCallback } = useFormRequest(removeAvatar, {
-    data: {}
-  });
+    })
+  }
 
   // Handle remove avatar
   const handleRemoveAvatar = () => {
     const confirmation = confirm(page_words?.do_you_want_remove_avatar);
 
     if (confirmation) {
-      removeCallback()
+      router.delete(route('user.profile.remove.avatar'));
     }
   }
 
@@ -49,7 +44,7 @@ const AvatarArea: RC = () => {
   const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files) {
-      setColumn('avatar', files[0])
+      setData('avatar', files[0])
     }
   }
 
@@ -63,13 +58,13 @@ const AvatarArea: RC = () => {
     e.preventDefault();
     const files = Array.from(e.dataTransfer.files);
     if (files) {
-      setColumn('avatar', files[0])
+      setData('avatar', files[0])
     }
   };
 
   useEffect(() => {
     if (data.avatar) {
-      updateCallback();
+      handleUpdateAvatar();
     }
   }, [data.avatar]);
 
@@ -95,7 +90,7 @@ const AvatarArea: RC = () => {
               type="button"
               color={'blue'}
               size={'sm'}
-              disabled={(status.processing || !can('edit profile'))}
+              disabled={(processing || !can('edit profile'))}
             >
               {page_words?.update}
             </Button>
@@ -106,7 +101,7 @@ const AvatarArea: RC = () => {
                   type="button"
                   color={'red'}
                   size={'sm'}
-                  disabled={status.processing}
+                  disabled={processing}
                 >
                   {page_words?.remove}
                 </Button>

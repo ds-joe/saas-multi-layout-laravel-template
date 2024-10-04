@@ -1,0 +1,30 @@
+{
+    "name": "Joe/bosts",
+    "description": "",
+    "authors": [
+        {
+            "name": "Youssef Bibawy",
+            "email": "youssefbibawy@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Bosts\\": "app/",
+            "Modules\\Bosts\\Database\\Factories\\": "database/factories/",
+            "Modules\\Bosts\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Bosts\\Tests\\": "tests/"
+        }
+    }
+}

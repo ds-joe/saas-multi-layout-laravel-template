@@ -15,12 +15,10 @@ declare global {
   // Window interface
   interface Window {
     axios: AxiosInstance;
-    routerService: Router
   }
 
   // Ziggy route
   var route: typeof ziggyRoute;
-  var routerService: Router;
 
   /** ***********************************************************************
    * Components & pages

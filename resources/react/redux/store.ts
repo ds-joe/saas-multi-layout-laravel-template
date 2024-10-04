@@ -11,6 +11,12 @@ export const dashboardStore = configureStore({
     dashboard: dashboardReducers,
     global: globalReducers,
   }),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredPaths: ['global_forms'],
+      },
+    }),
 });
 
 // export const websiteStore = configureStore({
@@ -18,6 +24,12 @@ export const dashboardStore = configureStore({
 //     website: websiteReducers,
 //     global: globalReducers,
 //   }),
+//   middleware: (getDefaultMiddleware) =>
+//     getDefaultMiddleware({
+//       serializableCheck: {
+//         ignoredPaths: ['global_forms'],
+//       },
+//     }),
 // });
 
 export type DashboardRootState = ReturnType<typeof dashboardStore.getState>;

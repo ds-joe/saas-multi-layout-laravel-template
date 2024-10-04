@@ -1,10 +1,10 @@
 // Hooks
-import useFormRequest from "@/hooks/useFormRequest";
+import useStateForm from "@/hooks/useStateForm";
 
 // Components
 import Typography from "@/Components/Global/Custom/Typography";
 import Avatar from "@/Components/Global/Custom/Avatar";
-import { Switch } from "@material-tailwind/react";
+import Switch from "@/Components/Global/Custom/Switch";
 
 // Types
 import type { Module } from "@/types/Services/Module";
@@ -14,14 +14,11 @@ import type { ChangeEvent } from "react";
 import placeholderImage from "~/images/global/placeholder.png";
 
 // Apis
-import { modulesUpdateApi } from "@/api/inertia/dashboard/module";
 import usePermission from "@/hooks/usePermission";
 
 const ModuleCard: RC<{ module: Module, formId: string, index: number }> = (props) => {
   const { can } = usePermission();
-  const { setColumn, data } = useFormRequest(modulesUpdateApi, {
-    data: {} as any
-  }, props.formId);
+  const { setColumnData, data } = useStateForm({} as any, props.formId);
 
   // Handle checked
   const handleChecked = (e: ChangeEvent<HTMLInputElement>) => {
@@ -30,8 +27,7 @@ const ModuleCard: RC<{ module: Module, formId: string, index: number }> = (props
       ...props.module,
       status: e.target.checked.toString()
     };
-
-    setColumn('modules', newData);
+    setColumnData('modules', newData);
   }
 
   return (

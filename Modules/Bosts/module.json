@@ -1,0 +1,11 @@
+{
+    "name": "Bosts",
+    "alias": "bosts",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Bosts\\Providers\\BostsServiceProvider"
+    ],
+    "files": []
+}

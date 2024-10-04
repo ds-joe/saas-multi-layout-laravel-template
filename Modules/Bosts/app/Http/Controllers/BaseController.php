@@ -1,0 +1,19 @@
+<?php
+
+namespace Modules\Bosts\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+
+# Module base controller
+class BaseController extends Controller
+{
+
+  public function __construct()
+  {
+    $this->setLayoutWords(array_merge(
+      # Put your module words here !
+    ));
+  }
+
+  # Put your module logic inside this controller.
+}

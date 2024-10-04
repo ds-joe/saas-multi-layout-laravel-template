@@ -7,5 +7,5 @@ Route::middleware(['auth', 'web'])->controller(ProfileController::class)->group(
   Route::middleware('can:show profile')->get('/profile', 'index')->name('user.profile');
   Route::middleware('can:edit profile')->post('/profile/avatar', 'updateAvatar')->name('user.profile.update.avatar');
   Route::middleware('can:edit profile')->delete('/profile/avatar', 'removeAvatar')->name('user.profile.remove.avatar');
-  Route::middleware('can:edit profile')->post('/profile/details', 'updateMainDetails')->name('user.profile.update.details');
+  Route::middleware('can:edit profile')->put('/profile/details', 'updateMainDetails')->name('user.profile.update.details');
 });
