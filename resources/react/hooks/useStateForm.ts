@@ -12,7 +12,6 @@ import { createForm, deleteForm, updateFormColumnData, updateFormData, updateFor
 import { StateFormData, StateFormErrors } from "@/types/Hooks/StateForm";
 import type { Method, VisitOptions, RequestPayload } from '@inertiajs/core';
 
-
 /**
  * @description
  * - This hook using to save data in redux to easy share it between components by form id.
@@ -33,32 +32,31 @@ const useStateForm = <D extends {}>(
   const form = useSelector((state: DashboardRootState) => state.global.forms[targetFormId]);
   const [render, setRender] = useState<boolean>(false);
 
+  // Init data
   useEffect(() => {
+    if (render) return;
 
-    // Init data if new form.
-    if (initData && !formId && !render) {
-      setRender((_prev) => {
-
-        dispatch(createForm({
-          key: targetFormId,
-          form: {
-            data: initData,
-            errors: {},
-            processing: false
-          }
-        }));
-
-        return true;
-      });
+    if (!form && initData && !formId) {
+      dispatch(createForm({
+        key: targetFormId,
+        form: {
+          data: initData,
+          errors: {},
+          processing: false
+        }
+      }));
+      setRender(true)
     }
 
-    // Cleanup on exist page.
+    // cleanup
     return () => {
       if (render) {
-        dispatch(deleteForm(targetFormId));
+        dispatch(deleteForm(targetFormId))
       }
     }
+
   }, []);
+
 
   /**
    * Set form data column
@@ -67,7 +65,7 @@ const useStateForm = <D extends {}>(
    * @param { D[keyof D] } value
    * @return { void }
    */
-  const setColumnData = (column: keyof D, value: D[keyof D]) => {
+  const setColumnData = (column: keyof D, value: D[keyof D]): void => {
     dispatch(updateFormColumnData({
       key: targetFormId,
       columnKey: column,
@@ -114,7 +112,7 @@ const useStateForm = <D extends {}>(
     return router[method](url, data, {
       ...options,
       onError: (errors) => {
-        setFormErrors(errors as any);
+        dispatch(updateFormErrors({ key: targetFormId, errors: errors as StateFormErrors<D> }));
         options?.onError && options.onError(errors);
       },
       onStart: (params) => {
@@ -124,6 +122,10 @@ const useStateForm = <D extends {}>(
       onFinish: (params) => {
         dispatch(updateProcessingState({ key: targetFormId, processing: false }));
         options.onFinish && options.onFinish(params);
+      },
+      onSuccess: (params) => {
+        dispatch(updateFormErrors({ key: targetFormId, errors: {} as StateFormErrors<D> }));
+        options.onSuccess && options.onSuccess(params);
       }
     });
   }

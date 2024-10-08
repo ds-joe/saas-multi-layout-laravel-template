@@ -8,8 +8,6 @@ use Inertia\Middleware;
 use App\Facade\Notification;
 use App\Http\Resources\Dashboard\User\InertiaUserResource;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Spatie\QueryBuilder\QueryBuilder;
 
 class HandleInertiaRequests extends Middleware
 {

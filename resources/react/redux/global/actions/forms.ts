@@ -28,7 +28,7 @@ export default {
    * @return { void }
    */
   updateFormErrors: (state: FormsTypeState, action: PayloadAction<{ key: string, errors: StateFormErrors }>) => {
-    if (state[action.payload.key]) return state;
+    if (!state[action.payload.key]) return state;
     state[action.payload.key].errors = action.payload.errors;
   },
 
@@ -50,9 +50,10 @@ export default {
    *
    * @param { FormsTypeState } state
    * @param { PayloadAction<{ key: string, data: FormTypeState['data'] }>} action
-   * @return { void }
+   * @return { FormsTypeState|void }
    */
-  updateFormData: (state: FormsTypeState, action: PayloadAction<{ key: string, data: FormTypeState['data'] }>): void => {
+  updateFormData: (state: FormsTypeState, action: PayloadAction<{ key: string, data: FormTypeState['data'] }>): FormsTypeState | void => {
+    if (!state[action.payload.key]) return state;
     state[action.payload.key].data = action.payload.data;
   },
 
@@ -73,9 +74,10 @@ export default {
    *
    * @param { FormsTypeState } state
    * @param { PayloadAction<{ key: string, processing: boolean }> } action
-   * @return { void }
+   * @return { FormsTypeState|void }
    */
-  updateProcessingState: (state: FormsTypeState, action: PayloadAction<{ key: string, processing: boolean }>): void => {
+  updateProcessingState: (state: FormsTypeState, action: PayloadAction<{ key: string, processing: boolean }>): FormsTypeState | void => {
+    if (!state[action.payload.key]) return state;
     state[action.payload.key].processing = action.payload.processing;
   }
 

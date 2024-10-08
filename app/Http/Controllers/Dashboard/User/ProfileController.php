@@ -21,7 +21,9 @@ class ProfileController extends UserController
   public function __construct()
   {
     parent::__construct();
-    $this->setLayoutWords(array_merge([]));
+    $this->setLayoutWords(array_merge(
+      __('dashboard/pages/user/profile'),
+    ));
   }
 
   /**
@@ -48,21 +50,7 @@ class ProfileController extends UserController
   {
     $user = User::findOrFail($request->user()->id);
 
-    # Check if avatar field exists.
-    if (!$user->meta()->where('key', '_avatar')->exists()) {
-      return new RuntimeException("Avatar meta data key does not found.");
-    }
-
-    # Update avatar
-    $newAvatar = Storage::restore(
-      $user->avatar_raw,
-      Storage::getPath(User::class),
-      $request->file('avatar')
-    );
-
-    $user->meta()->where('key', '_avatar')->update([
-      'value' => $newAvatar,
-    ]);
+    $this->updateUserAvatar($user, $request->file('avatar'));
 
     return back()->with(Notification::create(
       __('dashboard/pages/user/profile.avatar_updated'),
@@ -80,22 +68,7 @@ class ProfileController extends UserController
   {
     $user = User::findOrFail($request->user()->id);
 
-    # Check if avatar field exists.
-    if (!$user->meta()->where('key', '_avatar')->exists()) {
-      return new RuntimeException("Avatar meta data key does not found.");
-    }
-
-    # Remove avatar
-    $state = Storage::delete($user->avatar_raw);
-    if (!$state) {
-      return back()->with(Notification::create(
-        __('dashboard/pages/user/profile.avatar_removing_fails'),
-        NotificationType::error
-      ));
-    }
-    $user->meta()->where('key', '_avatar')->update([
-      'value' => null,
-    ]);
+    $this->removeUserAvatar($user);
 
     return back()->with(Notification::create(
       __('dashboard/pages/user/profile.avatar_removed'),
@@ -132,6 +105,7 @@ class ProfileController extends UserController
         $user->update(['password' => bcrypt($request->password)]);
       }
 
+      // Update meta data
       $user->meta()->where('key', '_first_name')->update(['value' => $request->_first_name]);
       $user->meta()->where('key', '_last_name')->update(['value' => $request->_last_name]);
     });

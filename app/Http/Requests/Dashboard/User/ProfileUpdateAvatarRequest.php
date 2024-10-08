@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Dashboard\User;
 
+use App\Rules\User\AvatarRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProfileUpdateAvatarRequest extends FormRequest
@@ -22,7 +23,7 @@ class ProfileUpdateAvatarRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'avatar' => "required|image|mimes:png,jpg,svg,webp|max:3072", # 3 MB Max size
+      'avatar' => ['required', new AvatarRule()], # 3 MB Max size
     ];
   }
 }

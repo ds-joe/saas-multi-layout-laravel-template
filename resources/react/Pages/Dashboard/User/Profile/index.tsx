@@ -57,9 +57,6 @@ const Profile: RP = () => {
           <Tabs value={'profile'}>
             <TabsHeader className='gap-7'>
               <Tab value={'profile'}>{page_words?.profile}</Tab>
-              <Tab value={'notifications'} disabled>{page_words?.notifications}</Tab>
-              <Tab value={'accounts'} disabled>{page_words?.accounts}</Tab>
-              <Tab value={'security'} disabled>{page_words?.security}</Tab>
             </TabsHeader>
             <TabsBody className='mt-4'>
               <TabPanel value={'profile'}><ProfileTab formId={formId} /></TabPanel>

@@ -15,6 +15,7 @@ return new class extends Migration
       $table->id();
       $table->string('key');
       $table->longText('value')->nullable();
+      $table->boolean('private')->default(false);
       $table->foreignId("user_id")->constrained('users')->cascadeOnDelete();
       $table->softDeletes();
       $table->timestamps();

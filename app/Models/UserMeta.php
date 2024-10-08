@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use RuntimeException;
 
 /**
  * NOTE: this table using to save additional data of user like google account id, etc..
@@ -32,7 +32,8 @@ class UserMeta extends Model
   protected $fillable = [
     'key',
     'value',
-    'user_id'
+    'user_id',
+    'private'
   ];
 
   /**
@@ -43,5 +44,21 @@ class UserMeta extends Model
   public function user(): BelongsTo
   {
     return $this->belongsTo(User::class);
+  }
+
+  /**
+   * Validate allowed keys in boot
+   *
+   * @return void
+   */
+  public static function boot()
+  {
+    parent::boot();
+
+    static::saving(function ($metaItem) {
+      if (!in_array($metaItem->key, config('meta-data.user_meta.allowed_keys', []))) {
+        throw new RuntimeException("Your keys not matched allowed keys");
+      }
+    });
   }
 }

@@ -26,13 +26,13 @@ class ProfileUpdateMainDetailsRequest extends FormRequest
   public function rules(): array
   {
     $id = request()->user()->id;
+    $meta = config('meta-data.user_meta.validation', []);
     return [
       'username' => ['required', new UsernameRule()],
       'email' => ['required', "email", "unique:users,email,{$id}"],
       'password' => ['sometimes', "nullable", new PasswordRule(), 'confirmed'],
       'password_confirmation' => "sometimes|nullable",
-      '_first_name' => ['required', new NameRule()],
-      '_last_name' => ['sometimes', "nullable", new NameRule()],
+      ...$meta
     ];
   }
 }

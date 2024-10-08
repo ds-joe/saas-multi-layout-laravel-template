@@ -1,9 +1,10 @@
 // Dependencies
 import { usePage } from "@inertiajs/react";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react"
 
 // Hooks
 import useStateForm from "@/hooks/useStateForm";
+import usePermission from "@/hooks/usePermission";
 
 // Components
 import Header from "@/Components/Dashboard/Layout/Header";
@@ -19,7 +20,7 @@ import DashboardLayout from "@/Layouts/Dashboard";
 
 // Types
 import type { Modules } from "@/types/Services/Module";
-import usePermission from "@/hooks/usePermission";
+
 
 const Module: RP = () => {
   const { page_words, modules } = usePage().props as ServerPageProps;
@@ -41,10 +42,6 @@ const Module: RP = () => {
       return hide ? data.modules.filter((module) => module.status.toString() == "true") : data.modules;
     });
   }
-
-  useEffect(() => {
-    console.log(data);
-  }, [data])
 
   return (
     <Section>

@@ -7,6 +7,9 @@ return [
   'custom_password' => 'The :attribute must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.',
   'name' => "The :attribute must start with a letter and can contain letters followed by optional digits. The total length must be between 3 and 50 characters.",
   'phone' => 'The :attribute field must be a valid phone number.',
+  'avatar_validate' => "The :attribute is not a valid file.",
+  'avatar_type' => 'The :attribute must be a file of type: png, jpg, jpeg, svg, webp.',
+  'avatar_size' => 'The :attribute may not be greater than 3 MB.',
 
   /*
     |--------------------------------------------------------------------------
