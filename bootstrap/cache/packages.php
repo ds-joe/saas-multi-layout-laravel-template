@@ -6,6 +6,13 @@
       0 => 'Inertia\\ServiceProvider',
     ),
   ),
+  'isolution/meta-data' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Joe\\MetaData\\Providers\\MetaDataProvider',
+    ),
+  ),
   'laravel/breeze' => 
   array (
     'providers' => 

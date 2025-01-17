@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "1fcce16a51406d42c31414f597b1dadc",
+  "content-hash": "a76bc7a5ccf3ffac82a3b10198ceb1dc",
   "packages": [
     {
       "name": "brick/math",
@@ -1125,6 +1125,53 @@
         }
       ],
       "time": "2024-06-13T01:25:09+00:00"
+    },
+    {
+      "name": "isolution/meta-data",
+      "version": "v1.2.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/ds-joe/laravel-meta-data.git",
+        "reference": "972b278128a2829255e204732fdebc1c9adb7258"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/ds-joe/laravel-meta-data/zipball/972b278128a2829255e204732fdebc1c9adb7258",
+        "reference": "972b278128a2829255e204732fdebc1c9adb7258",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=8.0"
+      },
+      "type": "library",
+      "extra": {
+        "laravel": {
+          "providers": [
+            "Joe\\MetaData\\Providers\\MetaDataProvider"
+          ]
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Joe\\MetaData\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Youssef bibawy",
+          "email": "youssefbibway@gmail.com"
+        }
+      ],
+      "description": "This service provides a dynamic and flexible way to manage key-value structured data, allowing developers to seamlessly handle unknown or loosely defined attributes in their Laravel applications. By leveraging Laravel's powerful Collections and Eloquent ORM, the service introduces a structured approach to store, retrieve, and manipulate data stored as key-value pairs.",
+      "support": {
+        "issues": "https://github.com/ds-joe/laravel-meta-data/issues",
+        "source": "https://github.com/ds-joe/laravel-meta-data/tree/v1.2.1"
+      },
+      "time": "2025-01-17T15:05:11+00:00"
     },
     {
       "name": "laravel/breeze",

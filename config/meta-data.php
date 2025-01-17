@@ -1,16 +1,15 @@
 <?php
 
-use App\Rules\User\NameRule;
-
 return [
-
-  // User Meta data config
-  'user_meta' => [
-    'allowed_keys' => ['_first_name', '_last_name', '_avatar'],
-    'validation' => [
-      '_first_name' => ['required', new NameRule()],
-      '_last_name' => ['sometimes', "nullable", new NameRule()],
-    ]
-  ],
-
+  /*
+    |--------------------------------------------------------------------------
+    | Key/Value
+    |--------------------------------------------------------------------------
+    |
+    | Define the key and value names for your metadata.
+    | These will be used when setting and retrieving metadata from your application.
+    |
+    */
+  'key_name' => env('METADATA_KEY', 'meta_key'),
+  'value_name' => env('METADATA_VALUE', 'meta_value')
 ];
